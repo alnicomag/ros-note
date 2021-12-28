@@ -22,7 +22,8 @@ theme:
     - navigation.tabs
     - navigation.expand
     - navigation.top
-    - toc.integrate
+    - navigation.indexes
+    #- toc.integrate
     #- header.autohide
   palette:
     scheme: default
@@ -86,6 +87,8 @@ markdown_extensions:
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
   - fontawesome_markdown
   - admonition
+  - pymdownx.details
+  - pymdownx.superfences
   - footnotes
   - attr_list
   - toc:
@@ -94,3 +97,7 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
+  - 環境構築:
+    - environment_setup/index.md
+    - Ubuntu仮想マシン: environment_setup/ubuntu.md
+    - ROS Melodic: environment_setup/ros_melodic.md
