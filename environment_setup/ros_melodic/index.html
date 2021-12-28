@@ -1,0 +1,513 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Sanada Tatsuya" name="author"/>
+<link href="https://alnicomag.github.io/ros-note/environment_setup/ros_melodic/" rel="canonical"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.2.3, mkdocs-material-8.1.3" name="generator"/>
+<title>ROS Melodic - ROS Note</title>
+<link href="../../assets/stylesheets/main.edf004c2.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#ros-melodicubuntu">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="ROS Note" class="md-header__button md-logo" data-md-component="logo" href="../.." title="ROS Note">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M32 224h32v192H32a31.962 31.962 0 0 1-32-32V256a31.962 31.962 0 0 1 32-32zm512-48v272a64.063 64.063 0 0 1-64 64H160a64.063 64.063 0 0 1-64-64V176a79.974 79.974 0 0 1 80-80h112V32a32 32 0 0 1 64 0v64h112a79.974 79.974 0 0 1 80 80zm-280 80a40 40 0 1 0-40 40 39.997 39.997 0 0 0 40-40zm-8 128h-64v32h64zm96 0h-64v32h64zm104-128a40 40 0 1 0-40 40 39.997 39.997 0 0 0 40-40zm-8 128h-64v32h64zm192-128v128a31.962 31.962 0 0 1-32 32h-32V224h32a31.962 31.962 0 0 1 32 32z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            ROS Note
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              ROS Melodic
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/alnicomag/ros-note" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</div>
+<div class="md-source__repository">
+    alnicomag/ros-note
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+      Home
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../">
+        環境構築
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="ROS Note" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="ROS Note">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M32 224h32v192H32a31.962 31.962 0 0 1-32-32V256a31.962 31.962 0 0 1 32-32zm512-48v272a64.063 64.063 0 0 1-64 64H160a64.063 64.063 0 0 1-64-64V176a79.974 79.974 0 0 1 80-80h112V32a32 32 0 0 1 64 0v64h112a79.974 79.974 0 0 1 80 80zm-280 80a40 40 0 1 0-40 40 39.997 39.997 0 0 0 40-40zm-8 128h-64v32h64zm96 0h-64v32h64zm104-128a40 40 0 1 0-40 40 39.997 39.997 0 0 0 40-40zm-8 128h-64v32h64zm192-128v128a31.962 31.962 0 0 1-32 32h-32V224h32a31.962 31.962 0 0 1 32 32z"></path></svg>
+</a>
+    ROS Note
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/alnicomag/ros-note" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</div>
+<div class="md-source__repository">
+    alnicomag/ros-note
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Home
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../">環境構築</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="環境構築" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          環境構築
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ubuntu/">
+        Ubuntu仮想マシン
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          ROS Melodic
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        ROS Melodic
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ros-melodicubuntu">
+    ROS MelodicをUbuntu仮想マシン上に導入する
+  </a>
+<nav aria-label="ROS MelodicをUbuntu仮想マシン上に導入する" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ros">
+    ROSのパッケージリポジトリ情報を登録する
+  </a>
+<nav aria-label="ROSのパッケージリポジトリ情報を登録する" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    参考にしたページ
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ros_1">
+    ROSのパッケージ認証用公開鍵を追加する
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#apt">
+    Aptのパッケージ一覧を更新
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ros_2">
+    ROSをインストール
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    環境変数の設定
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ros_3">
+    ROSパッケージをなんやかんやするためのツールを導入
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rosdepros">
+    rosdep（ROSパッケージをなんやかんやするためのツールのひとつ）の初期化
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ros_4">
+    ROSのワークスペースを作成、ビルド
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    確認
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ros-melodicubuntu">
+    ROS MelodicをUbuntu仮想マシン上に導入する
+  </a>
+<nav aria-label="ROS MelodicをUbuntu仮想マシン上に導入する" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ros">
+    ROSのパッケージリポジトリ情報を登録する
+  </a>
+<nav aria-label="ROSのパッケージリポジトリ情報を登録する" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    参考にしたページ
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ros_1">
+    ROSのパッケージ認証用公開鍵を追加する
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#apt">
+    Aptのパッケージ一覧を更新
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ros_2">
+    ROSをインストール
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    環境変数の設定
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ros_3">
+    ROSパッケージをなんやかんやするためのツールを導入
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rosdepros">
+    rosdep（ROSパッケージをなんやかんやするためのツールのひとつ）の初期化
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ros_4">
+    ROSのワークスペースを作成、ビルド
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    確認
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>ROS Melodic</h1>
+<h2 id="ros-melodicubuntu">ROS MelodicをUbuntu仮想マシン上に導入する<a class="headerlink" href="#ros-melodicubuntu" title="Permanent link">§</a></h2>
+<div class="admonition info">
+<p class="admonition-title">環境</p>
+<ul>
+<li>Windows10</li>
+<li>VMware Workstation Player 16.2.1</li>
+<li>Ubuntu Desktop 18.04.6 LTS</li>
+<li>ROS Melodic Morenia</li>
+</ul>
+</div>
+<h3 id="ros">ROSのパッケージリポジトリ情報を登録する<a class="headerlink" href="#ros" title="Permanent link">§</a></h3>
+<div class="highlight"><pre><span></span><code>sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'
+</code></pre></div>
+<details class="note">
+<summary>sh</summary>
+<ul>
+<li>書式：<code>sh -c `コマンド文字列`</code></li>
+<li>意味：<code>コマンド文字列</code> をシェルに実行させる</li>
+</ul>
+</details>
+<details class="note">
+<summary>echo</summary>
+<ul>
+<li>書式：<code>echo "文字列" &gt; ファイル名</code></li>
+<li>意味：ファイル名が <code>ファイル名</code> で表されるファイルの内容を <code>文字列</code> で上書き保存する</li>
+</ul>
+</details>
+<details class="note">
+<summary>lsb_release</summary>
+<ul>
+<li>書式：<code>lsb_release -sc</code></li>
+<li>意味：ディストリビューションのコードネームを短縮形式で取得するコマンド</li>
+</ul>
+</details>
+<p>この工程は Ubuntu において APT が ROS のパッケージリポジトリを見つけられるようにするための設定です．</p>
+<p>Ubuntu ではソフトウェア（アプリケーション）の単位をパッケージと呼びます．一般的に複雑なソフトウェアであればあるほど，ソフトウェアは自身以外のソフトウェアが利用出来る状態にあることを前提として作成されています．このような関係を依存関係と呼びます．依存関係はソフトウェア間に連鎖的に存在するため，適切なバージョンを選択することも考えると，あるソフトウェアを利用するためだけに膨大な数のパッケージのインストールを要求されるということが起こり得ます．これは非常に面倒なので，Ubuntu にはソフトウェアのインストールやアンインストールを管理しパッケージ間の依存関係の解決を行うパッケージ管理システム APT が含まれています．</p>
+<p>APT でパッケージ管理をする上で，リポジトリ情報は <code>/etc/apt/sources.list</code> に保存します．ただしこれは公式リポジトリの場合の話で，サードパーティリポジトリの場合は <code>/etc/apt/sources.list.d/</code> ディレクトリ以下に <code>hogehoge.list</code> のようなファイルを適宜作成し，その中に情報を保存します．</p>
+<p>この <code>sources.list</code> ファイルの書式は <a href="https://manpages.ubuntu.com/manpages/bionic/en/man5/sources.list.5.html">https://manpages.ubuntu.com/manpages/bionic/en/man5/sources.list.5.html</a> から確認できて，該当箇所を抜粋すると以下のようになっています．</p>
+<div class="highlight"><pre><span></span><code>deb [ option1=value1 option2=value2 ] uri suite [component1] [component2] [...]
+</code></pre></div>
+<p><code>uri</code> の部分をリポジトリの URI に，<code>suite</code> の部分を Ubuntu のコードネームに，<code>component</code> の部分をコンポーネント名に書き換えます．コンポーネントとはパッケージの分類のことで，Ubuntu ではパッケージをサポートの状態やライセンスの違いに基づき以下の4つに分類しています．</p>
+<ul>
+<li>main</li>
+<li>restricted</li>
+<li>universe</li>
+<li>multiverse</li>
+</ul>
+<p>同じソフトウェアであってもそれぞれのコンポーネントに合わせたパッケージが複数用意されているリポジトリもあるので，対象にしたいものを選択して記述することになります．</p>
+<p>Ubuntu のコードネームは <code>lsb_release -sc</code> コマンドにより取得でき，今回は Ubuntu 18 上で実行しているので，<code>bionic</code> が得られます．</p>
+<figure>
+<img src="95b1a6ec-09b1-4e03-a473-d8b601c77c64.png" width="800"/>
+</figure>
+<h4 id="_1">参考にしたページ<a class="headerlink" href="#_1" title="Permanent link">§</a></h4>
+<p><a href="https://gihyo.jp/admin/serial/01/ubuntu-recipe/0677">第677回 aptで使うsources.listのオプションいろいろ：Ubuntu Weekly Recipe｜gihyo.jp … 技術評論社</a>
+<a href="https://kujira16.hateblo.jp/entry/2019/10/14/190008">APT の設定 (/etc/apt/sources.list) をちゃんと理解する - くじらにっき++</a></p>
+<h3 id="ros_1">ROSのパッケージ認証用公開鍵を追加する<a class="headerlink" href="#ros_1" title="Permanent link">§</a></h3>
+<div class="highlight"><pre><span></span><code>sudo apt install curl
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+</code></pre></div>
+<p>コマンドの意味：<code>curl</code>コマンドを<code>silent</code>オプション付きで実行して得られた公開鍵の文字列を，パイプによって<code>apt-key add -</code>コマンドへ標準入力として渡すことで，認証用公開鍵を追加する．</p>
+<p>ちなみに <code>https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc</code> にアクセスしてみると以下の公開鍵ファイルであることが分かる．</p>
+<div class="highlight"><pre><span></span><code>-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1
+
+mQINBFzvJpYBEADY8l1YvO7iYW5gUESyzsTGnMvVUmlV3XarBaJz9bGRmgPXh7jc
+VFrQhE0L/HV7LOfoLI9H2GWYyHBqN5ERBlcA8XxG3ZvX7t9nAZPQT2Xxe3GT3tro
+u5oCR+SyHN9xPnUwDuqUSvJ2eqMYb9B/Hph3OmtjG30jSNq9kOF5bBTk1hOTGPH4
+K/AY0jzT6OpHfXU6ytlFsI47ZKsnTUhipGsKucQ1CXlyirndZ3V3k70YaooZ55rG
+aIoAWlx2H0J7sAHmqS29N9jV9mo135d+d+TdLBXI0PXtiHzE9IPaX+ctdSUrPnp+
+TwR99lxglpIG6hLuvOMAaxiqFBB/Jf3XJ8OBakfS6nHrWH2WqQxRbiITl0irkQoz
+pwNEF2Bv0+Jvs1UFEdVGz5a8xexQHst/RmKrtHLct3iOCvBNqoAQRbvWvBhPjO/p
+V5cYeUljZ5wpHyFkaEViClaVWqa6PIsyLqmyjsruPCWlURLsQoQxABcL8bwxX7UT
+hM6CtH6tGlYZ85RIzRifIm2oudzV5l+8oRgFr9yVcwyOFT6JCioqkwldW52P1pk/
+/SnuexC6LYqqDuHUs5NnokzzpfS6QaWfTY5P5tz4KHJfsjDIktly3mKVfY0fSPVV
+okdGpcUzvz2hq1fqjxB6MlB/1vtk0bImfcsoxBmF7H+4E9ZN1sX/tSb0KQARAQAB
+tCZPcGVuIFJvYm90aWNzIDxpbmZvQG9zcmZvdW5kYXRpb24ub3JnPokCVAQTAQgA
+PgIbAwULCQgHAgYVCgkICwIEFgIDAQIeAQIXgBYhBMHPbjHmut6IaLFytPQu1vur
+F8ZUBQJgsdhRBQkLTMW7AAoJEPQu1vurF8ZUTMwP/3f7EkOPIFjUdRmpNJ2db4iB
+RQu5b2SJRG+KIdbvQBzKUBMV6/RUhEDPjhXZI3zDevzBewvAMKkqs2Q1cWo9WV7Z
+PyTkvSyey/Tjn+PozcdvzkvrEjDMftIk8E1WzLGq7vnPLZ1q/b6Vq4H373Z+EDWa
+DaDwW72CbCBLWAVtqff80CwlI2x8fYHKr3VBUnwcXNHR4+nRABfAWnaU4k+oTshC
+Qucsd8vitNfsSXrKuKyz91IRHRPnJjx8UvGU4tRGfrHkw1505EZvgP02vXeRyWBR
+fKiL1vGy4tCSRDdZO3ms2J2m08VPv65HsHaWYMnO+rNJmMZj9d9JdL/9GRf5F6U0
+quoIFL39BhUEvBynuqlrqistnyOhw8W/IQy/ymNzBMcMz6rcMjMwhkgm/LNXoSD1
+1OrJu4ktQwRhwvGVarnB8ihwjsTxZFylaLmFSfaA+OAlOqCLS1OkIVMzjW+Ul6A6
+qjiCEUOsnlf4CGlhzNMZOx3low6ixzEqKOcfECpeIj80a2fBDmWkcAAjlHu6VBhA
+TUDG9e2xKLzV2Z/DLYsb3+n9QW7KO0yZKfiuUo6AYboAioQKn5jh3iRvjGh2Ujpo
+22G+oae3PcCc7G+z12j6xIY709FQuA49dA2YpzMda0/OX4LP56STEveDRrO+CnV6
+WE+F5FaIKwb72PL4rLi4
+=i0tj
+-----END PGP PUBLIC KEY BLOCK-----
+</code></pre></div>
+<h3 id="apt">Aptのパッケージ一覧を更新<a class="headerlink" href="#apt" title="Permanent link">§</a></h3>
+<div class="highlight"><pre><span></span><code>sudo apt update
+</code></pre></div>
+<p>先の工程でROSのパッケージリポジトリ情報を登録したので，それらの情報が追加されるはず．</p>
+<h3 id="ros_2">ROSをインストール<a class="headerlink" href="#ros_2" title="Permanent link">§</a></h3>
+<div class="highlight"><pre><span></span><code>sudo apt install ros-melodic-desktop-full
+</code></pre></div>
+<h3 id="_2">環境変数の設定<a class="headerlink" href="#_2" title="Permanent link">§</a></h3>
+<div class="highlight"><pre><span></span><code>echo "source /opt/ros/melodic/setup.bash" &gt;&gt; ~/.bashrc
+source ~/.bashrc
+</code></pre></div>
+<p>コマンドの意味：bash起動毎に実行される<code>~/.bashrc</code>ファイルの末尾に<code>source /opt/ros/melodic/setup.bash</code>を追記し，その追記した<code>~/.bashrc</code>ファイルを実行する．つまり，<code>/opt/ros/melodic/setup.bash</code>に書かれた設定がbash起動毎に読み込まれることになる．</p>
+<h3 id="ros_3">ROSパッケージをなんやかんやするためのツールを導入<a class="headerlink" href="#ros_3" title="Permanent link">§</a></h3>
+<div class="highlight"><pre><span></span><code>sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+</code></pre></div>
+<h3 id="rosdepros">rosdep（ROSパッケージをなんやかんやするためのツールのひとつ）の初期化<a class="headerlink" href="#rosdepros" title="Permanent link">§</a></h3>
+<div class="highlight"><pre><span></span><code>sudo rosdep init
+rosdep update
+</code></pre></div>
+<h3 id="ros_4">ROSのワークスペースを作成、ビルド<a class="headerlink" href="#ros_4" title="Permanent link">§</a></h3>
+<div class="highlight"><pre><span></span><code>mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/
+catkin_make
+echo "source ~/catkin_ws/devel/setup.bash" &gt;&gt; ~/.bashrc
+source ~/.bashrc
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code>echo $ROS_PACKAGE_PATH
+</code></pre></div>
+でPATHが通っているか確認する．
+<div class="highlight"><pre><span></span><code>/home/hogehoge/catkin_ws/src:/opt/ros/melodic/share
+</code></pre></div>
+hogehogeのところはユーザー名で読み替えて下さい．</p>
+<h3 id="_3">確認<a class="headerlink" href="#_3" title="Permanent link">§</a></h3>
+<p><div class="highlight"><pre><span></span><code>roscore
+</code></pre></div>
+<img alt="image.png (113.5 kB)" src="https://img.esa.io/uploads/production/attachments/15139/2021/12/03/12652/eb7e4ef5-6e6d-4208-9376-1ad2d406d217.png" width="922.5"/></p>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" data-md-state="hidden" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path></svg>
+            Back to top
+          </a>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Ubuntu仮想マシン" class="md-footer__link md-footer__link--prev" href="../ubuntu/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Ubuntu仮想マシン
+            </div>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2021 - Sanada Tatsuya
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://twitter.com/alnicomag" rel="noopener" target="_blank" title="twitter.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "navigation.indexes"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+<script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
