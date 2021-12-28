@@ -1,0 +1,41 @@
+name: document
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  deploy_site:
+    name: Deploy site
+    if: ${{ github.event_name == 'push'}}
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2-beta
+      - name: Setup Python and install MkDocs
+        uses: ./.github/actions/setup_mkdocs
+      - name: Build
+        run: mkdocs build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+  try_to_build_pull_request:
+    name: Try to build pull request
+    if: ${{ github.event_name == 'pull_request'}}
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2-beta
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Setup Python and install MkDocs
+        uses: ./.github/actions/setup_mkdocs
+      - name: Build
+        run: mkdocs build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: site
+          path: ./site

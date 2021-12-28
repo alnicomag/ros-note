@@ -1,0 +1,14 @@
+name: Setup MkDocs
+description: Setup MkDocs
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/setup-python@v1
+      with:
+        python-version: 3.9.7
+    - run: pip3 install mkdocs
+      shell: bash
+    - run: pip3 install mkdocs-material
+      shell: bash
+    - run: pip3 install fontawesome_markdown mkdocs-mermaid2-plugin pymdown-extensions plantuml-markdown python-markdown-math
+      shell: bash
