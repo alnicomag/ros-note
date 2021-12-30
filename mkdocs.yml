@@ -74,7 +74,7 @@ extra:
       link: https://twitter.com/alnicomag
   analytics:
     provider: google
-    proerty: G-72RDHRKN14
+    property: G-72RDHRKN14
 
 extra_css:
   - stylesheets/extra.css
