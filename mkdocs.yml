@@ -25,11 +25,14 @@ theme:
     - navigation.indexes
     #- toc.integrate
     #- header.autohide
+    - content.code.annotate
   palette:
     scheme: default
+    primary: orange
+    accent: indigo
   font:
-    text: Roboto
-    code: Roboto Mono
+    text: Zen Maru Gothic
+    code: Source Code Pro
   #favicon: images/favicon.png
   icon:
     logo: fontawesome/solid/robot
@@ -69,9 +72,12 @@ extra:
   social:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/alnicomag
+  analytics:
+    provider: google
+    proerty: G-72RDHRKN14
 
 extra_css:
-  #- stylesheets/extra.css
+  - stylesheets/extra.css
   - https://use.fontawesome.com/releases/v5.15.0/css/all.css
 
 extra_javascript:
@@ -91,6 +97,7 @@ markdown_extensions:
   - pymdownx.superfences
   - footnotes
   - attr_list
+  - md_in_html
   - toc:
       permalink: §
 
@@ -101,3 +108,6 @@ nav:
     - environment_setup/index.md
     - Ubuntu仮想マシン: environment_setup/ubuntu.md
     - ROS Melodic: environment_setup/ros_melodic.md
+  - 雑記:
+    - memo/index.md
+    - URDF: memo/urdf.md

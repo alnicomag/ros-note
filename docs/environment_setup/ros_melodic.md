@@ -1,12 +1,13 @@
-## ROS MelodicをUbuntu仮想マシン上に導入する
+## ROS Melodic を Ubuntu 仮想マシン上に導入する
 
 !!! info "環境"
     - Windows10
     - VMware Workstation Player 16.2.1
     - Ubuntu Desktop 18.04.6 LTS
-    - ROS Melodic Morenia
 
-### ROSのパッケージリポジトリ情報を登録する
+上記の環境に新たに ROS Melodic Morenia を導入する方法を説明します．既に別のディストリビューションが導入されている場合などの考慮はここではしていません．
+
+### ROS のパッケージリポジトリ情報を登録する
 
 ```
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -15,7 +16,6 @@ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main
 ??? note "sh"
     - 書式：``sh -c `コマンド文字列` ``
     - 意味：`コマンド文字列` をシェルに実行させる
-
 
 ??? note "echo"
     - 書式：`echo "文字列" > ファイル名`
@@ -53,21 +53,35 @@ Ubuntu のコードネームは `lsb_release -sc` コマンドにより取得で
 </figure>
 
 #### 参考にしたページ
-[第677回 aptで使うsources.listのオプションいろいろ：Ubuntu Weekly Recipe｜gihyo.jp … 技術評論社](https://gihyo.jp/admin/serial/01/ubuntu-recipe/0677)
-[APT の設定 (/etc/apt/sources.list) をちゃんと理解する - くじらにっき++](https://kujira16.hateblo.jp/entry/2019/10/14/190008)
+- [第677回 aptで使うsources.listのオプションいろいろ：Ubuntu Weekly Recipe｜gihyo.jp … 技術評論社](https://gihyo.jp/admin/serial/01/ubuntu-recipe/0677)
+- [APT の設定 (/etc/apt/sources.list) をちゃんと理解する - くじらにっき++](https://kujira16.hateblo.jp/entry/2019/10/14/190008)
 
 
-### ROSのパッケージ認証用公開鍵を追加する
+### ROS のパッケージ認証用公開鍵を追加する
 ```
 sudo apt install curl
 curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 ```
 
-コマンドの意味：`curl`コマンドを`silent`オプション付きで実行して得られた公開鍵の文字列を，パイプによって`apt-key add -`コマンドへ標準入力として渡すことで，認証用公開鍵を追加する．
+??? note "apt"
+    - 書式：`apt install パッケージ名`
+    - 意味：`パッケージ名` をAPT管理の元インストールする
 
-ちなみに `https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc` にアクセスしてみると以下の公開鍵ファイルであることが分かる．
+??? note "curl"
+    - 書式：`curl -s URL`
+    - 意味：`URL` で表されたファイルの内容を取得し標準出力に出力する
 
-```
+??? note "apt-key"
+    - 書式：`apt-key add -`
+    - 意味：標準入力から得られた文字列を APT のパッケージ認証用公開鍵として追加する
+
+2行目のコマンドは2つのコマンドが `|` によって繋がっている構造になっています．これをパイプと呼び，1つ目のコマンドが標準出力に出力した結果が2つ目のコマンドの標準入力に受け渡されます．これによって複数の処理を次々と繋げていくことが可能となります．
+
+`curl` コマンドは `-s` オプションを付けることでファイル取得中のプログレス表記をミュートさせることができます．これにより取得したファイルの内容のみを次のコマンドへと受け渡すことができます．
+
+ちなみに `https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc` にアクセスしてみると以下の公開鍵ファイルであることが分かります．
+
+``` asc
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v1
 
@@ -100,14 +114,18 @@ WE+F5FaIKwb72PL4rLi4
 -----END PGP PUBLIC KEY BLOCK-----
 ```
 
-### Aptのパッケージ一覧を更新
+### APT のパッケージ一覧を更新
 ```
 sudo apt update
 ```
 
-先の工程でROSのパッケージリポジトリ情報を登録したので，それらの情報が追加されるはず．
+??? note "apt"
+    - 書式：`apt update`
+    - 意味：APT のパッケージ情報を更新する
 
-### ROSをインストール
+先の工程で ROS のパッケージリポジトリ情報を登録しました．そのため，それらのパッケージ情報が新たに取得できます．このコマンドではパッケージがインストールされたりバージョンアップがされたりということはなく，登録されているリポジトリにどのようなパッケージが存在しているのかという情報が更新されるだけです．
+
+### ROS をインストール
 ```
 sudo apt install ros-melodic-desktop-full
 ```
@@ -118,7 +136,49 @@ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-コマンドの意味：bash起動毎に実行される`~/.bashrc`ファイルの末尾に`source /opt/ros/melodic/setup.bash`を追記し，その追記した`~/.bashrc`ファイルを実行する．つまり，`/opt/ros/melodic/setup.bash`に書かれた設定がbash起動毎に読み込まれることになる．
+??? note "echo"
+    - 書式：`echo "文字列" >> ファイル名`
+    - 意味：ファイル名が `ファイル名` で表されるファイルの末尾に `文字列` を追記する
+
+??? note "source"
+    - 書式：`source ファイル名`
+    - 意味：`ファイル名` に書かれたコマンドを現在のシェルで実行する
+
+`~/.bashrc` ファイルは bash 起動毎に毎回読み込まれるファイルです．`~/.bashrc`ファイルの末尾に`source /opt/ros/melodic/setup.bash`が追記されることで，`/opt/ros/melodic/setup.bash` に書かれたスクリプトがbash起動毎に実行されることになります．bash 起動時とは `bash hogehoge` というようなコマンドを叩いた時です．
+
+
+
+``` bash linenums="1" title="/opt/ros/melodic/setup.bash"
+#!/usr/bin/env bash
+# generated from catkin/cmake/templates/setup.bash.in
+
+CATKIN_SHELL=bash
+
+# source setup.sh from same directory as this file
+_CATKIN_SETUP_DIR=$(builtin cd "`dirname "${BASH_SOURCE[0]}"`" > /dev/null && pwd)
+. "$_CATKIN_SETUP_DIR/setup.sh"
+
+```
+
+
+??? note "builtin"
+    - 書式：`builtin コマンド`
+    - 意味：同じ名前のコマンドがエイリアスとビルトインコマンドの両方で見つかった場合にビルトインコマンドの方を優先させる
+
+??? note "dirname"
+    - 書式：`dirname パス名`
+    - 意味：パス名からディレクトリ名を取得する
+
+??? note "リダイレクション"
+    - 書式：`コマンド > ファイル名`
+    - 意味：`コマンド` の実行結果を標準出力ではなく `ファイル名` に出力する
+
+??? note "バッククォート"
+    バッククォートで囲まれた文字列をコマンドとして実行した結果を得る
+
+??? note "ダブルクォート"
+    ダブルクォートで囲まれた文字列のうち，`$`，バッククォート，バックスラッシュのみを解釈し，それ以外をエスケープした文字列を得る
+
 
 ### ROSパッケージをなんやかんやするためのツールを導入
 ```
@@ -154,5 +214,7 @@ hogehogeのところはユーザー名で読み替えて下さい．
 ```
 roscore
 ```
-<img width="922.5" alt="image.png (113.5 kB)" src="https://img.esa.io/uploads/production/attachments/15139/2021/12/03/12652/eb7e4ef5-6e6d-4208-9376-1ad2d406d217.png">
 
+<figure>
+    <img width="800" src="eb7e4ef5-6e6d-4208-9376-1ad2d406d217.png"/>
+</figure>
