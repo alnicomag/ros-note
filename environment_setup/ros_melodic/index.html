@@ -12,18 +12,20 @@
 <title>ROS Melodic - ROS Note</title>
 <link href="../../assets/stylesheets/main.edf004c2.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
+<meta content="#ffa724" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="https://fonts.googleapis.com/css?family=Zen+Maru+Gothic:300,400,400i,700%7CSource+Code+Pro&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Zen Maru Gothic";--md-code-font:"Source Code Pro"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
 <link href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
-<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<body data-md-color-accent="indigo" data-md-color-primary="orange" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#ros-melodicubuntu">
+<a class="md-skip" href="#ros-melodic-ubuntu">
           Skip to content
         </a>
 </div>
@@ -109,6 +111,11 @@
         環境構築
       </a>
 </li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../memo/">
+        雑記
+      </a>
+</li>
 </ul>
 </div>
 </nav>
@@ -175,16 +182,16 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#ros-melodicubuntu">
-    ROS MelodicをUbuntu仮想マシン上に導入する
+<a class="md-nav__link" href="#ros-melodic-ubuntu">
+    ROS Melodic を Ubuntu 仮想マシン上に導入する
   </a>
-<nav aria-label="ROS MelodicをUbuntu仮想マシン上に導入する" class="md-nav">
+<nav aria-label="ROS Melodic を Ubuntu 仮想マシン上に導入する" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#ros">
-    ROSのパッケージリポジトリ情報を登録する
+    ROS のパッケージリポジトリ情報を登録する
   </a>
-<nav aria-label="ROSのパッケージリポジトリ情報を登録する" class="md-nav">
+<nav aria-label="ROS のパッケージリポジトリ情報を登録する" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
@@ -196,17 +203,17 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#ros_1">
-    ROSのパッケージ認証用公開鍵を追加する
+    ROS のパッケージ認証用公開鍵を追加する
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#apt">
-    Aptのパッケージ一覧を更新
+    APT のパッケージ一覧を更新
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#ros_2">
-    ROSをインストール
+    ROS をインストール
   </a>
 </li>
 <li class="md-nav__item">
@@ -243,6 +250,28 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../memo/">雑記</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="雑記" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          雑記
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../memo/urdf/">
+        URDF
+      </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </div>
@@ -258,16 +287,16 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#ros-melodicubuntu">
-    ROS MelodicをUbuntu仮想マシン上に導入する
+<a class="md-nav__link" href="#ros-melodic-ubuntu">
+    ROS Melodic を Ubuntu 仮想マシン上に導入する
   </a>
-<nav aria-label="ROS MelodicをUbuntu仮想マシン上に導入する" class="md-nav">
+<nav aria-label="ROS Melodic を Ubuntu 仮想マシン上に導入する" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#ros">
-    ROSのパッケージリポジトリ情報を登録する
+    ROS のパッケージリポジトリ情報を登録する
   </a>
-<nav aria-label="ROSのパッケージリポジトリ情報を登録する" class="md-nav">
+<nav aria-label="ROS のパッケージリポジトリ情報を登録する" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
@@ -279,17 +308,17 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#ros_1">
-    ROSのパッケージ認証用公開鍵を追加する
+    ROS のパッケージ認証用公開鍵を追加する
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#apt">
-    Aptのパッケージ一覧を更新
+    APT のパッケージ一覧を更新
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#ros_2">
-    ROSをインストール
+    ROS をインストール
   </a>
 </li>
 <li class="md-nav__item">
@@ -328,17 +357,17 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>ROS Melodic</h1>
-<h2 id="ros-melodicubuntu">ROS MelodicをUbuntu仮想マシン上に導入する<a class="headerlink" href="#ros-melodicubuntu" title="Permanent link">§</a></h2>
+<h2 id="ros-melodic-ubuntu">ROS Melodic を Ubuntu 仮想マシン上に導入する<a class="headerlink" href="#ros-melodic-ubuntu" title="Permanent link">§</a></h2>
 <div class="admonition info">
 <p class="admonition-title">環境</p>
 <ul>
 <li>Windows10</li>
 <li>VMware Workstation Player 16.2.1</li>
 <li>Ubuntu Desktop 18.04.6 LTS</li>
-<li>ROS Melodic Morenia</li>
 </ul>
 </div>
-<h3 id="ros">ROSのパッケージリポジトリ情報を登録する<a class="headerlink" href="#ros" title="Permanent link">§</a></h3>
+<p>上記の環境に新たに ROS Melodic Morenia を導入する方法を説明します．既に別のディストリビューションが導入されている場合などの考慮はここではしていません．</p>
+<h3 id="ros">ROS のパッケージリポジトリ情報を登録する<a class="headerlink" href="#ros" title="Permanent link">§</a></h3>
 <div class="highlight"><pre><span></span><code>sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'
 </code></pre></div>
 <details class="note">
@@ -381,57 +410,148 @@
 <img src="95b1a6ec-09b1-4e03-a473-d8b601c77c64.png" width="800"/>
 </figure>
 <h4 id="_1">参考にしたページ<a class="headerlink" href="#_1" title="Permanent link">§</a></h4>
-<p><a href="https://gihyo.jp/admin/serial/01/ubuntu-recipe/0677">第677回 aptで使うsources.listのオプションいろいろ：Ubuntu Weekly Recipe｜gihyo.jp … 技術評論社</a>
-<a href="https://kujira16.hateblo.jp/entry/2019/10/14/190008">APT の設定 (/etc/apt/sources.list) をちゃんと理解する - くじらにっき++</a></p>
-<h3 id="ros_1">ROSのパッケージ認証用公開鍵を追加する<a class="headerlink" href="#ros_1" title="Permanent link">§</a></h3>
+<ul>
+<li><a href="https://gihyo.jp/admin/serial/01/ubuntu-recipe/0677">第677回 aptで使うsources.listのオプションいろいろ：Ubuntu Weekly Recipe｜gihyo.jp … 技術評論社</a></li>
+<li><a href="https://kujira16.hateblo.jp/entry/2019/10/14/190008">APT の設定 (/etc/apt/sources.list) をちゃんと理解する - くじらにっき++</a></li>
+</ul>
+<h3 id="ros_1">ROS のパッケージ認証用公開鍵を追加する<a class="headerlink" href="#ros_1" title="Permanent link">§</a></h3>
 <div class="highlight"><pre><span></span><code>sudo apt install curl
 curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 </code></pre></div>
-<p>コマンドの意味：<code>curl</code>コマンドを<code>silent</code>オプション付きで実行して得られた公開鍵の文字列を，パイプによって<code>apt-key add -</code>コマンドへ標準入力として渡すことで，認証用公開鍵を追加する．</p>
-<p>ちなみに <code>https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc</code> にアクセスしてみると以下の公開鍵ファイルであることが分かる．</p>
-<div class="highlight"><pre><span></span><code>-----BEGIN PGP PUBLIC KEY BLOCK-----
-Version: GnuPG v1
+<details class="note">
+<summary>apt</summary>
+<ul>
+<li>書式：<code>apt install パッケージ名</code></li>
+<li>意味：<code>パッケージ名</code> をAPT管理の元インストールする</li>
+</ul>
+</details>
+<details class="note">
+<summary>curl</summary>
+<ul>
+<li>書式：<code>curl -s URL</code></li>
+<li>意味：<code>URL</code> で表されたファイルの内容を取得し標準出力に出力する</li>
+</ul>
+</details>
+<details class="note">
+<summary>apt-key</summary>
+<ul>
+<li>書式：<code>apt-key add -</code></li>
+<li>意味：標準入力から得られた文字列を APT のパッケージ認証用公開鍵として追加する</li>
+</ul>
+</details>
+<p>2行目のコマンドは2つのコマンドが <code>|</code> によって繋がっている構造になっています．これをパイプと呼び，1つ目のコマンドが標準出力に出力した結果が2つ目のコマンドの標準入力に受け渡されます．これによって複数の処理を次々と繋げていくことが可能となります．</p>
+<p><code>curl</code> コマンドは <code>-s</code> オプションを付けることでファイル取得中のプログレス表記をミュートさせることができます．これにより取得したファイルの内容のみを次のコマンドへと受け渡すことができます．</p>
+<p>ちなみに <code>https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc</code> にアクセスしてみると以下の公開鍵ファイルであることが分かります．</p>
+<div class="highlight"><pre><span></span><code><span class="gh">-----BEGIN PGP PUBLIC KEY BLOCK-----</span><span class="w"></span>
+<span class="na">Version</span><span class="o">:</span><span class="w"> </span><span class="s">GnuPG v1</span><span class="w"></span>
 
-mQINBFzvJpYBEADY8l1YvO7iYW5gUESyzsTGnMvVUmlV3XarBaJz9bGRmgPXh7jc
-VFrQhE0L/HV7LOfoLI9H2GWYyHBqN5ERBlcA8XxG3ZvX7t9nAZPQT2Xxe3GT3tro
-u5oCR+SyHN9xPnUwDuqUSvJ2eqMYb9B/Hph3OmtjG30jSNq9kOF5bBTk1hOTGPH4
-K/AY0jzT6OpHfXU6ytlFsI47ZKsnTUhipGsKucQ1CXlyirndZ3V3k70YaooZ55rG
-aIoAWlx2H0J7sAHmqS29N9jV9mo135d+d+TdLBXI0PXtiHzE9IPaX+ctdSUrPnp+
-TwR99lxglpIG6hLuvOMAaxiqFBB/Jf3XJ8OBakfS6nHrWH2WqQxRbiITl0irkQoz
-pwNEF2Bv0+Jvs1UFEdVGz5a8xexQHst/RmKrtHLct3iOCvBNqoAQRbvWvBhPjO/p
-V5cYeUljZ5wpHyFkaEViClaVWqa6PIsyLqmyjsruPCWlURLsQoQxABcL8bwxX7UT
-hM6CtH6tGlYZ85RIzRifIm2oudzV5l+8oRgFr9yVcwyOFT6JCioqkwldW52P1pk/
-/SnuexC6LYqqDuHUs5NnokzzpfS6QaWfTY5P5tz4KHJfsjDIktly3mKVfY0fSPVV
-okdGpcUzvz2hq1fqjxB6MlB/1vtk0bImfcsoxBmF7H+4E9ZN1sX/tSb0KQARAQAB
-tCZPcGVuIFJvYm90aWNzIDxpbmZvQG9zcmZvdW5kYXRpb24ub3JnPokCVAQTAQgA
-PgIbAwULCQgHAgYVCgkICwIEFgIDAQIeAQIXgBYhBMHPbjHmut6IaLFytPQu1vur
-F8ZUBQJgsdhRBQkLTMW7AAoJEPQu1vurF8ZUTMwP/3f7EkOPIFjUdRmpNJ2db4iB
-RQu5b2SJRG+KIdbvQBzKUBMV6/RUhEDPjhXZI3zDevzBewvAMKkqs2Q1cWo9WV7Z
-PyTkvSyey/Tjn+PozcdvzkvrEjDMftIk8E1WzLGq7vnPLZ1q/b6Vq4H373Z+EDWa
-DaDwW72CbCBLWAVtqff80CwlI2x8fYHKr3VBUnwcXNHR4+nRABfAWnaU4k+oTshC
-Qucsd8vitNfsSXrKuKyz91IRHRPnJjx8UvGU4tRGfrHkw1505EZvgP02vXeRyWBR
-fKiL1vGy4tCSRDdZO3ms2J2m08VPv65HsHaWYMnO+rNJmMZj9d9JdL/9GRf5F6U0
-quoIFL39BhUEvBynuqlrqistnyOhw8W/IQy/ymNzBMcMz6rcMjMwhkgm/LNXoSD1
-1OrJu4ktQwRhwvGVarnB8ihwjsTxZFylaLmFSfaA+OAlOqCLS1OkIVMzjW+Ul6A6
-qjiCEUOsnlf4CGlhzNMZOx3low6ixzEqKOcfECpeIj80a2fBDmWkcAAjlHu6VBhA
-TUDG9e2xKLzV2Z/DLYsb3+n9QW7KO0yZKfiuUo6AYboAioQKn5jh3iRvjGh2Ujpo
-22G+oae3PcCc7G+z12j6xIY709FQuA49dA2YpzMda0/OX4LP56STEveDRrO+CnV6
-WE+F5FaIKwb72PL4rLi4
-=i0tj
------END PGP PUBLIC KEY BLOCK-----
+<span class="s">mQINBFzvJpYBEADY8l1YvO7iYW5gUESyzsTGnMvVUmlV3XarBaJz9bGRmgPXh7jc</span><span class="w"></span>
+<span class="s">VFrQhE0L/HV7LOfoLI9H2GWYyHBqN5ERBlcA8XxG3ZvX7t9nAZPQT2Xxe3GT3tro</span><span class="w"></span>
+<span class="s">u5oCR+SyHN9xPnUwDuqUSvJ2eqMYb9B/Hph3OmtjG30jSNq9kOF5bBTk1hOTGPH4</span><span class="w"></span>
+<span class="s">K/AY0jzT6OpHfXU6ytlFsI47ZKsnTUhipGsKucQ1CXlyirndZ3V3k70YaooZ55rG</span><span class="w"></span>
+<span class="s">aIoAWlx2H0J7sAHmqS29N9jV9mo135d+d+TdLBXI0PXtiHzE9IPaX+ctdSUrPnp+</span><span class="w"></span>
+<span class="s">TwR99lxglpIG6hLuvOMAaxiqFBB/Jf3XJ8OBakfS6nHrWH2WqQxRbiITl0irkQoz</span><span class="w"></span>
+<span class="s">pwNEF2Bv0+Jvs1UFEdVGz5a8xexQHst/RmKrtHLct3iOCvBNqoAQRbvWvBhPjO/p</span><span class="w"></span>
+<span class="s">V5cYeUljZ5wpHyFkaEViClaVWqa6PIsyLqmyjsruPCWlURLsQoQxABcL8bwxX7UT</span><span class="w"></span>
+<span class="s">hM6CtH6tGlYZ85RIzRifIm2oudzV5l+8oRgFr9yVcwyOFT6JCioqkwldW52P1pk/</span><span class="w"></span>
+<span class="s">/SnuexC6LYqqDuHUs5NnokzzpfS6QaWfTY5P5tz4KHJfsjDIktly3mKVfY0fSPVV</span><span class="w"></span>
+<span class="s">okdGpcUzvz2hq1fqjxB6MlB/1vtk0bImfcsoxBmF7H+4E9ZN1sX/tSb0KQARAQAB</span><span class="w"></span>
+<span class="s">tCZPcGVuIFJvYm90aWNzIDxpbmZvQG9zcmZvdW5kYXRpb24ub3JnPokCVAQTAQgA</span><span class="w"></span>
+<span class="s">PgIbAwULCQgHAgYVCgkICwIEFgIDAQIeAQIXgBYhBMHPbjHmut6IaLFytPQu1vur</span><span class="w"></span>
+<span class="s">F8ZUBQJgsdhRBQkLTMW7AAoJEPQu1vurF8ZUTMwP/3f7EkOPIFjUdRmpNJ2db4iB</span><span class="w"></span>
+<span class="s">RQu5b2SJRG+KIdbvQBzKUBMV6/RUhEDPjhXZI3zDevzBewvAMKkqs2Q1cWo9WV7Z</span><span class="w"></span>
+<span class="s">PyTkvSyey/Tjn+PozcdvzkvrEjDMftIk8E1WzLGq7vnPLZ1q/b6Vq4H373Z+EDWa</span><span class="w"></span>
+<span class="s">DaDwW72CbCBLWAVtqff80CwlI2x8fYHKr3VBUnwcXNHR4+nRABfAWnaU4k+oTshC</span><span class="w"></span>
+<span class="s">Qucsd8vitNfsSXrKuKyz91IRHRPnJjx8UvGU4tRGfrHkw1505EZvgP02vXeRyWBR</span><span class="w"></span>
+<span class="s">fKiL1vGy4tCSRDdZO3ms2J2m08VPv65HsHaWYMnO+rNJmMZj9d9JdL/9GRf5F6U0</span><span class="w"></span>
+<span class="s">quoIFL39BhUEvBynuqlrqistnyOhw8W/IQy/ymNzBMcMz6rcMjMwhkgm/LNXoSD1</span><span class="w"></span>
+<span class="s">1OrJu4ktQwRhwvGVarnB8ihwjsTxZFylaLmFSfaA+OAlOqCLS1OkIVMzjW+Ul6A6</span><span class="w"></span>
+<span class="s">qjiCEUOsnlf4CGlhzNMZOx3low6ixzEqKOcfECpeIj80a2fBDmWkcAAjlHu6VBhA</span><span class="w"></span>
+<span class="s">TUDG9e2xKLzV2Z/DLYsb3+n9QW7KO0yZKfiuUo6AYboAioQKn5jh3iRvjGh2Ujpo</span><span class="w"></span>
+<span class="s">22G+oae3PcCc7G+z12j6xIY709FQuA49dA2YpzMda0/OX4LP56STEveDRrO+CnV6</span><span class="w"></span>
+<span class="s">WE+F5FaIKwb72PL4rLi4</span><span class="w"></span>
+<span class="s">=i0tj</span><span class="w"></span>
+<span class="gh">-----END PGP PUBLIC KEY BLOCK-----</span><span class="w"></span>
 </code></pre></div>
-<h3 id="apt">Aptのパッケージ一覧を更新<a class="headerlink" href="#apt" title="Permanent link">§</a></h3>
+<h3 id="apt">APT のパッケージ一覧を更新<a class="headerlink" href="#apt" title="Permanent link">§</a></h3>
 <div class="highlight"><pre><span></span><code>sudo apt update
 </code></pre></div>
-<p>先の工程でROSのパッケージリポジトリ情報を登録したので，それらの情報が追加されるはず．</p>
-<h3 id="ros_2">ROSをインストール<a class="headerlink" href="#ros_2" title="Permanent link">§</a></h3>
+<details class="note">
+<summary>apt</summary>
+<ul>
+<li>書式：<code>apt update</code></li>
+<li>意味：APT のパッケージ情報を更新する</li>
+</ul>
+</details>
+<p>先の工程で ROS のパッケージリポジトリ情報を登録しました．そのため，それらのパッケージ情報が新たに取得できます．このコマンドではパッケージがインストールされたりバージョンアップがされたりということはなく，登録されているリポジトリにどのようなパッケージが存在しているのかという情報が更新されるだけです．</p>
+<h3 id="ros_2">ROS をインストール<a class="headerlink" href="#ros_2" title="Permanent link">§</a></h3>
 <div class="highlight"><pre><span></span><code>sudo apt install ros-melodic-desktop-full
 </code></pre></div>
 <h3 id="_2">環境変数の設定<a class="headerlink" href="#_2" title="Permanent link">§</a></h3>
 <div class="highlight"><pre><span></span><code>echo "source /opt/ros/melodic/setup.bash" &gt;&gt; ~/.bashrc
 source ~/.bashrc
 </code></pre></div>
-<p>コマンドの意味：bash起動毎に実行される<code>~/.bashrc</code>ファイルの末尾に<code>source /opt/ros/melodic/setup.bash</code>を追記し，その追記した<code>~/.bashrc</code>ファイルを実行する．つまり，<code>/opt/ros/melodic/setup.bash</code>に書かれた設定がbash起動毎に読み込まれることになる．</p>
+<details class="note">
+<summary>echo</summary>
+<ul>
+<li>書式：<code>echo "文字列" &gt;&gt; ファイル名</code></li>
+<li>意味：ファイル名が <code>ファイル名</code> で表されるファイルの末尾に <code>文字列</code> を追記する</li>
+</ul>
+</details>
+<details class="note">
+<summary>source</summary>
+<ul>
+<li>書式：<code>source ファイル名</code></li>
+<li>意味：<code>ファイル名</code> に書かれたコマンドを現在のシェルで実行する</li>
+</ul>
+</details>
+<p><code>~/.bashrc</code> ファイルは bash 起動毎に毎回読み込まれるファイルです．<code>~/.bashrc</code>ファイルの末尾に<code>source /opt/ros/melodic/setup.bash</code>が追記されることで，<code>/opt/ros/melodic/setup.bash</code> に書かれたスクリプトがbash起動毎に実行されることになります．bash 起動時とは <code>bash hogehoge</code> というようなコマンドを叩いた時です．</p>
+<table class="highlighttable"><tr><th class="filename" colspan="2"><div class="highlight"><span class="filename">/opt/ros/melodic/setup.bash</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
+<span class="c1"># generated from catkin/cmake/templates/setup.bash.in</span>
+
+<span class="nv">CATKIN_SHELL</span><span class="o">=</span>bash
+
+<span class="c1"># source setup.sh from same directory as this file</span>
+<span class="nv">_CATKIN_SETUP_DIR</span><span class="o">=</span><span class="k">$(</span><span class="nb">builtin</span> <span class="nb">cd</span> <span class="s2">"`dirname "</span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="si">}</span><span class="s2">"`"</span> &gt; /dev/null <span class="o">&amp;&amp;</span> <span class="nb">pwd</span><span class="k">)</span>
+. <span class="s2">"</span><span class="nv">$_CATKIN_SETUP_DIR</span><span class="s2">/setup.sh"</span>
+</code></pre></div>
+</td></tr></table>
+<details class="note">
+<summary>builtin</summary>
+<ul>
+<li>書式：<code>builtin コマンド</code></li>
+<li>意味：同じ名前のコマンドがエイリアスとビルトインコマンドの両方で見つかった場合にビルトインコマンドの方を優先させる</li>
+</ul>
+</details>
+<details class="note">
+<summary>dirname</summary>
+<ul>
+<li>書式：<code>dirname パス名</code></li>
+<li>意味：パス名からディレクトリ名を取得する</li>
+</ul>
+</details>
+<details class="note">
+<summary>リダイレクション</summary>
+<ul>
+<li>書式：<code>コマンド &gt; ファイル名</code></li>
+<li>意味：<code>コマンド</code> の実行結果を標準出力ではなく <code>ファイル名</code> に出力する</li>
+</ul>
+</details>
+<details class="note">
+<summary>バッククォート</summary>
+<p>バッククォートで囲まれた文字列をコマンドとして実行した結果を得る</p>
+</details>
+<details class="note">
+<summary>ダブルクォート</summary>
+<p>ダブルクォートで囲まれた文字列のうち，<code>$</code>，バッククォート，バックスラッシュのみを解釈し，それ以外をエスケープした文字列を得る</p>
+</details>
 <h3 id="ros_3">ROSパッケージをなんやかんやするためのツールを導入<a class="headerlink" href="#ros_3" title="Permanent link">§</a></h3>
 <div class="highlight"><pre><span></span><code>sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
 </code></pre></div>
@@ -453,9 +573,11 @@ source ~/.bashrc
 </code></pre></div>
 hogehogeのところはユーザー名で読み替えて下さい．</p>
 <h3 id="_3">確認<a class="headerlink" href="#_3" title="Permanent link">§</a></h3>
-<p><div class="highlight"><pre><span></span><code>roscore
+<div class="highlight"><pre><span></span><code>roscore
 </code></pre></div>
-<img alt="image.png (113.5 kB)" src="https://img.esa.io/uploads/production/attachments/15139/2021/12/03/12652/eb7e4ef5-6e6d-4208-9376-1ad2d406d217.png" width="922.5"/></p>
+<figure>
+<img src="eb7e4ef5-6e6d-4208-9376-1ad2d406d217.png" width="800"/>
+</figure>
 </article>
 </div>
 </div>
@@ -477,6 +599,19 @@ hogehogeのところはユーザー名で読み替えて下さい．</p>
               </span>
               Ubuntu仮想マシン
             </div>
+</div>
+</a>
+<a aria-label="Next: ここに書くこと" class="md-footer__link md-footer__link--next" href="../../memo/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              ここに書くこと
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
 </div>
 </a>
 </nav>
@@ -505,7 +640,7 @@ hogehogeのところはユーザー名で読み替えて下さい．</p>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "navigation.indexes"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "navigation.indexes", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
 <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>

@@ -1,0 +1,52 @@
+.md-main{
+    background-image: url(pattern-randomized.svg);
+    background-size: 1000px;
+    background-repeat: repeat;
+    background-position: 0px 0px;
+    background-attachment: fixed;
+}
+
+.md-grid {
+    max-width: 1600px;
+}
+
+.md-sidebar__inner{
+    padding: 0.5rem 0.2rem;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.md-content {
+    margin: 0 0.5rem;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.md-typeset h1 {
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.8);
+    padding-bottom: 0.1em;
+    border-bottom: solid 2px rgba(0, 0, 0, 0.8);
+}
+
+.md-typeset h2 {
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.8);
+    border-bottom: dotted 2px rgba(0, 0, 0, 0.8);
+}
+
+.md-typeset h3 {
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.md-typeset h4 {
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.md-typeset__scrollwrap {
+    text-align: center;
+}
+
+.md-typeset table:not([class]) td {
+    vertical-align: middle;
+}
