@@ -1,4 +1,4 @@
-## VMware Workstation Player を用いて Windows マシン上に Ubuntu 仮想マシンを構築する
+## VMware Workstation Player を用いて Windows マシン上に Ubuntu 18 仮想マシンを構築する
 
 !!! info "環境"
     - Windows10
