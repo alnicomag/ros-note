@@ -109,6 +109,11 @@
     </a>
 </li>
 <li class="md-tabs__item">
+<a class="md-tabs__link" href="../../linux_literacy/">
+        Linux
+      </a>
+</li>
+<li class="md-tabs__item">
 <a class="md-tabs__link" href="../../environment_setup/">
         環境構築
       </a>
@@ -152,13 +157,35 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../environment_setup/">環境構築</a>
+<a href="../../linux_literacy/">Linux</a>
 <label for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="環境構築" class="md-nav" data-md-level="1">
+<nav aria-label="Linux" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../linux_literacy/shell/">
+        シェル
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../environment_setup/">環境構築</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="環境構築" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
           環境構築
         </label>
@@ -177,15 +204,15 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../">雑記</a>
-<label for="__nav_3">
+<label for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="雑記" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
+<label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
           雑記
         </label>
@@ -244,8 +271,25 @@
 <article class="md-content__inner md-typeset">
 <h1>URDF</h1>
 <h2 id="urdf">URDF とは<a class="headerlink" href="#urdf" title="Permanent link">§</a></h2>
-<p>Unified Robot Description Format</p>
-<p><img alt="" src="FHiv0hoaAAUx_xf.jfif"/></p>
+<p>URDF とは Unified Robot Description Format の省略形で，リンクとジョイントと呼ばれる2種類のノードによって構成される木構造を用いてロボットの機械的構造を表現するファイルフォーマットです．根ノードは必ずリンクノードとなり，リンクノードは1つ以上の子ノードを持ち，ジョイントノードは唯一の子ノードを持ちます．そのため，葉ノードは全てリンクノードとなります．</p>
+<p>リンクノードにはビジュアライゼーションに利用するための3Dデータを対応付けたり，質量や慣性モーメントなどの物理シミュレーションに必要な情報を書き込むことができます．</p>
+<figure>
+<p><img alt="" src="FHiv0hoaAAUx_xf.jfif"/>
+</p>
+<figcaption>Fig. 1 単一リンクのみを持つ URDF を RViz で可視化させた例</figcaption>
+</figure>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+
+<span class="nt">&lt;robot</span> <span class="na">name=</span><span class="s">"percepption_camera"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">name=</span><span class="s">"base_link"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;visual&gt;</span>
+      <span class="nt">&lt;geometry&gt;</span>
+        <span class="nt">&lt;mesh</span> <span class="na">filename=</span><span class="s">"package://perceptioncam_description/meshes/EnclosureAssy.stl"</span> <span class="na">scale=</span><span class="s">"0.001 0.001 0.001"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/geometry&gt;</span>
+    <span class="nt">&lt;/visual&gt;</span>
+  <span class="nt">&lt;/link&gt;</span>
+<span class="nt">&lt;/robot&gt;</span>
+</code></pre></div>
 </article>
 </div>
 </div>

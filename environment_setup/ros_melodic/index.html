@@ -109,6 +109,11 @@
     </a>
 </li>
 <li class="md-tabs__item">
+<a class="md-tabs__link" href="../../linux_literacy/">
+        Linux
+      </a>
+</li>
+<li class="md-tabs__item">
 <a class="md-tabs__link md-tabs__link--active" href="../">
         環境構築
       </a>
@@ -149,16 +154,38 @@
         Home
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../">環境構築</a>
+<a href="../../linux_literacy/">Linux</a>
 <label for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="環境構築" class="md-nav" data-md-level="1">
+<nav aria-label="Linux" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../linux_literacy/shell/">
+        シェル
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../">環境構築</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="環境構築" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
           環境構築
         </label>
@@ -253,15 +280,15 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../memo/">雑記</a>
-<label for="__nav_3">
+<label for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="雑記" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
+<label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
           雑記
         </label>
@@ -441,9 +468,17 @@ curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo ap
 <li>意味：標準入力から得られた文字列を APT のパッケージ認証用公開鍵として追加する</li>
 </ul>
 </details>
-<p>2行目のコマンドは2つのコマンドが <code>|</code> によって繋がっている構造になっています．これをパイプと呼び，1つ目のコマンドが標準出力に出力した結果が2つ目のコマンドの標準入力に受け渡されます．これによって複数の処理を次々と繋げていくことが可能となります．</p>
-<p><code>curl</code> コマンドは <code>-s</code> オプションを付けることでファイル取得中のプログレス表記をミュートさせることができます．これにより取得したファイルの内容のみを次のコマンドへと受け渡すことができます．</p>
-<p>ちなみに <code>https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc</code> にアクセスしてみると以下の公開鍵ファイルであることが分かります．</p>
+<details class="note">
+<summary>パイプ</summary>
+<ul>
+<li>書式：<code>コマンド1 | コマンド2</code></li>
+<li>意味：<code>コマンド1</code> の標準出力を <code>コマンド2</code> の標準入力へ繋げる</li>
+</ul>
+</details>
+<p>APT は必要とあらばそのパッケージをリポジトリからダウンロードしてきますが，そのダウンロードしたファイルが本当にその作者によって作成されたものであるのか（悪意あるパッケージにすり替えられていないかどうか）検証する機能を持っています．その方法として公開鍵暗号方式による電子署名が利用されています．そのため ROS のリポジトリ提供者が公開している認証用公開鍵を APT に登録しておく必要があります．</p>
+<p>2行目のコマンドにはパイプ処理が活用されています．これにより，<code>curl</code> コマンドの結果を標準出力に表示させずに，直接 <code>at-key</code> コマンドへの入力として繋げることができます．</p>
+<p><code>curl</code> コマンドは <code>-s</code> オプションを付けることでファイル取得中のプログレス表記をミュートさせることができます．これにより取得したファイルの内容のみをパッケージ認証用公開鍵として追加することができます．</p>
+<p><a href="https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc">https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc</a> にアクセスしてみるとその内容は以下の公開鍵ファイルであることが分かります．</p>
 <div class="highlight"><pre><span></span><code><span class="gh">-----BEGIN PGP PUBLIC KEY BLOCK-----</span><span class="w"></span>
 <span class="na">Version</span><span class="o">:</span><span class="w"> </span><span class="s">GnuPG v1</span><span class="w"></span>
 
@@ -554,6 +589,199 @@ source ~/.bashrc
 <summary>ダブルクォート</summary>
 <p>ダブルクォートで囲まれた文字列のうち，<code>$</code>，バッククォート，バックスラッシュのみを解釈し，それ以外をエスケープした文字列を得る</p>
 </details>
+<table class="highlighttable"><tr><th class="filename" colspan="2"><div class="highlight"><span class="filename">/opt/ros/melodic/setup.sh</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span>
+<span class="normal">95</span>
+<span class="normal">96</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env sh</span>
+<span class="c1"># generated from catkin/cmake/template/setup.sh.in</span>
+
+<span class="c1"># Sets various environment variables and sources additional environment hooks.</span>
+<span class="c1"># It tries it's best to undo changes from a previously sourced setup file before.</span>
+<span class="c1"># Supported command line options:</span>
+<span class="c1"># --extend: skips the undoing of changes from a previously sourced setup file</span>
+<span class="c1"># --local: only considers this workspace but not the chained ones</span>
+<span class="c1"># In plain sh shell which doesn't support arguments for sourced scripts you can</span>
+<span class="c1"># set the environment variable `CATKIN_SETUP_UTIL_ARGS=--extend/--local` instead.</span>
+
+<span class="c1"># since this file is sourced either use the provided _CATKIN_SETUP_DIR</span>
+<span class="c1"># or fall back to the destination set at configure time</span>
+: <span class="si">${</span><span class="nv">_CATKIN_SETUP_DIR</span><span class="p">:=/opt/ros/melodic</span><span class="si">}</span>
+<span class="nv">_SETUP_UTIL</span><span class="o">=</span><span class="s2">"</span><span class="nv">$_CATKIN_SETUP_DIR</span><span class="s2">/_setup_util.py"</span>
+<span class="nb">unset</span> _CATKIN_SETUP_DIR
+
+<span class="k">if</span> <span class="o">[</span> ! -f <span class="s2">"</span><span class="nv">$_SETUP_UTIL</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">"Missing Python script: </span><span class="nv">$_SETUP_UTIL</span><span class="s2">"</span>
+  <span class="k">return</span> <span class="m">22</span>
+<span class="k">fi</span>
+
+<span class="c1"># detect if running on Darwin platform</span>
+<span class="nv">_UNAME</span><span class="o">=</span><span class="sb">`</span>uname -s<span class="sb">`</span>
+<span class="nv">_IS_DARWIN</span><span class="o">=</span><span class="m">0</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$_UNAME</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"Darwin"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nv">_IS_DARWIN</span><span class="o">=</span><span class="m">1</span>
+<span class="k">fi</span>
+<span class="nb">unset</span> _UNAME
+
+<span class="c1"># make sure to export all environment variables</span>
+<span class="nb">export</span> CMAKE_PREFIX_PATH
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$_IS_DARWIN</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nb">export</span> LD_LIBRARY_PATH
+<span class="k">else</span>
+  <span class="nb">export</span> DYLD_LIBRARY_PATH
+<span class="k">fi</span>
+<span class="nb">unset</span> _IS_DARWIN
+<span class="nb">export</span> PATH
+<span class="nb">export</span> PKG_CONFIG_PATH
+<span class="nb">export</span> PYTHONPATH
+
+<span class="c1"># remember type of shell if not already set</span>
+<span class="k">if</span> <span class="o">[</span> -z <span class="s2">"</span><span class="nv">$CATKIN_SHELL</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nv">CATKIN_SHELL</span><span class="o">=</span>sh
+<span class="k">fi</span>
+
+<span class="c1"># invoke Python script to generate necessary exports of environment variables</span>
+<span class="c1"># use TMPDIR if it exists, otherwise fall back to /tmp</span>
+<span class="k">if</span> <span class="o">[</span> -d <span class="s2">"</span><span class="si">${</span><span class="nv">TMPDIR</span><span class="k">:-</span><span class="si">}</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nv">_TMPDIR</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">TMPDIR</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">else</span>
+  <span class="nv">_TMPDIR</span><span class="o">=</span>/tmp
+<span class="k">fi</span>
+<span class="nv">_SETUP_TMP</span><span class="o">=</span><span class="sb">`</span>mktemp <span class="s2">"</span><span class="si">${</span><span class="nv">_TMPDIR</span><span class="si">}</span><span class="s2">/setup.sh.XXXXXXXXXX"</span><span class="sb">`</span>
+<span class="nb">unset</span> _TMPDIR
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> -o ! -f <span class="s2">"</span><span class="nv">$_SETUP_TMP</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">"Could not create temporary file: </span><span class="nv">$_SETUP_TMP</span><span class="s2">"</span>
+  <span class="k">return</span> <span class="m">1</span>
+<span class="k">fi</span>
+<span class="nv">CATKIN_SHELL</span><span class="o">=</span><span class="nv">$CATKIN_SHELL</span> <span class="s2">"</span><span class="nv">$_SETUP_UTIL</span><span class="s2">"</span> <span class="nv">$@</span> <span class="si">${</span><span class="nv">CATKIN_SETUP_UTIL_ARGS</span><span class="k">:-</span><span class="si">}</span> &gt;&gt; <span class="s2">"</span><span class="nv">$_SETUP_TMP</span><span class="s2">"</span>
+<span class="nv">_RC</span><span class="o">=</span><span class="nv">$?</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$_RC</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="k">if</span> <span class="o">[</span> <span class="nv">$_RC</span> -eq <span class="m">2</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">"Could not write the output of '</span><span class="nv">$_SETUP_UTIL</span><span class="s2">' to temporary file '</span><span class="nv">$_SETUP_TMP</span><span class="s2">': may be the disk if full?"</span>
+  <span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">"Failed to run '\"</span><span class="nv">$_SETUP_UTIL</span><span class="s2">\" </span><span class="nv">$@</span><span class="s2">': return code </span><span class="nv">$_RC</span><span class="s2">"</span>
+  <span class="k">fi</span>
+  <span class="nb">unset</span> _RC
+  <span class="nb">unset</span> _SETUP_UTIL
+  rm -f <span class="s2">"</span><span class="nv">$_SETUP_TMP</span><span class="s2">"</span>
+  <span class="nb">unset</span> _SETUP_TMP
+  <span class="k">return</span> <span class="m">1</span>
+<span class="k">fi</span>
+<span class="nb">unset</span> _RC
+<span class="nb">unset</span> _SETUP_UTIL
+. <span class="s2">"</span><span class="nv">$_SETUP_TMP</span><span class="s2">"</span>
+rm -f <span class="s2">"</span><span class="nv">$_SETUP_TMP</span><span class="s2">"</span>
+<span class="nb">unset</span> _SETUP_TMP
+
+<span class="c1"># source all environment hooks</span>
+<span class="nv">_i</span><span class="o">=</span><span class="m">0</span>
+<span class="k">while</span> <span class="o">[</span> <span class="nv">$_i</span> -lt <span class="nv">$_CATKIN_ENVIRONMENT_HOOKS_COUNT</span> <span class="o">]</span><span class="p">;</span> <span class="k">do</span>
+  <span class="nb">eval</span> <span class="nv">_envfile</span><span class="o">=</span><span class="se">\$</span>_CATKIN_ENVIRONMENT_HOOKS_<span class="nv">$_i</span>
+  <span class="nb">unset</span> _CATKIN_ENVIRONMENT_HOOKS_<span class="nv">$_i</span>
+  <span class="nb">eval</span> <span class="nv">_envfile_workspace</span><span class="o">=</span><span class="se">\$</span>_CATKIN_ENVIRONMENT_HOOKS_<span class="si">${</span><span class="nv">_i</span><span class="si">}</span>_WORKSPACE
+  <span class="nb">unset</span> _CATKIN_ENVIRONMENT_HOOKS_<span class="si">${</span><span class="nv">_i</span><span class="si">}</span>_WORKSPACE
+  <span class="c1"># set workspace for environment hook</span>
+  <span class="nv">CATKIN_ENV_HOOK_WORKSPACE</span><span class="o">=</span><span class="nv">$_envfile_workspace</span>
+  . <span class="s2">"</span><span class="nv">$_envfile</span><span class="s2">"</span>
+  <span class="nb">unset</span> CATKIN_ENV_HOOK_WORKSPACE
+  <span class="nv">_i</span><span class="o">=</span><span class="k">$((</span>_i <span class="o">+</span> <span class="m">1</span><span class="k">))</span>
+<span class="k">done</span>
+<span class="nb">unset</span> _i
+
+<span class="nb">unset</span> _CATKIN_ENVIRONMENT_HOOKS_COUNT
+</code></pre></div>
+</td></tr></table>
 <h3 id="ros_3">ROSパッケージをなんやかんやするためのツールを導入<a class="headerlink" href="#ros_3" title="Permanent link">§</a></h3>
 <div class="highlight"><pre><span></span><code>sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
 </code></pre></div>
