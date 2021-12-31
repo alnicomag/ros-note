@@ -95,6 +95,7 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.keys
   - footnotes
   - attr_list
   - md_in_html
@@ -104,6 +105,9 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
+  - Linux:
+    - linux_literacy/index.md
+    - シェル: linux_literacy/shell.md
   - 環境構築:
     - environment_setup/index.md
     - Ubuntu仮想マシン: environment_setup/ubuntu.md

@@ -75,11 +75,17 @@ curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo ap
     - 書式：`apt-key add -`
     - 意味：標準入力から得られた文字列を APT のパッケージ認証用公開鍵として追加する
 
-2行目のコマンドは2つのコマンドが `|` によって繋がっている構造になっています．これをパイプと呼び，1つ目のコマンドが標準出力に出力した結果が2つ目のコマンドの標準入力に受け渡されます．これによって複数の処理を次々と繋げていくことが可能となります．
+??? note "パイプ"
+    - 書式：`コマンド1 | コマンド2`
+    - 意味：`コマンド1` の標準出力を `コマンド2` の標準入力へ繋げる
 
-`curl` コマンドは `-s` オプションを付けることでファイル取得中のプログレス表記をミュートさせることができます．これにより取得したファイルの内容のみを次のコマンドへと受け渡すことができます．
+APT は必要とあらばそのパッケージをリポジトリからダウンロードしてきますが，そのダウンロードしたファイルが本当にその作者によって作成されたものであるのか（悪意あるパッケージにすり替えられていないかどうか）検証する機能を持っています．その方法として公開鍵暗号方式による電子署名が利用されています．そのため ROS のリポジトリ提供者が公開している認証用公開鍵を APT に登録しておく必要があります．
 
-ちなみに `https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc` にアクセスしてみると以下の公開鍵ファイルであることが分かります．
+2行目のコマンドにはパイプ処理が活用されています．これにより，`curl` コマンドの結果を標準出力に表示させずに，直接 `at-key` コマンドへの入力として繋げることができます．
+
+`curl` コマンドは `-s` オプションを付けることでファイル取得中のプログレス表記をミュートさせることができます．これにより取得したファイルの内容のみをパッケージ認証用公開鍵として追加することができます．
+
+[https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc](https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc) にアクセスしてみるとその内容は以下の公開鍵ファイルであることが分かります．
 
 ``` asc
 -----BEGIN PGP PUBLIC KEY BLOCK-----
@@ -178,6 +184,110 @@ _CATKIN_SETUP_DIR=$(builtin cd "`dirname "${BASH_SOURCE[0]}"`" > /dev/null && pw
 
 ??? note "ダブルクォート"
     ダブルクォートで囲まれた文字列のうち，`$`，バッククォート，バックスラッシュのみを解釈し，それ以外をエスケープした文字列を得る
+
+
+``` bash linenums="1" title="/opt/ros/melodic/setup.sh"
+#!/usr/bin/env sh
+# generated from catkin/cmake/template/setup.sh.in
+
+# Sets various environment variables and sources additional environment hooks.
+# It tries it's best to undo changes from a previously sourced setup file before.
+# Supported command line options:
+# --extend: skips the undoing of changes from a previously sourced setup file
+# --local: only considers this workspace but not the chained ones
+# In plain sh shell which doesn't support arguments for sourced scripts you can
+# set the environment variable `CATKIN_SETUP_UTIL_ARGS=--extend/--local` instead.
+
+# since this file is sourced either use the provided _CATKIN_SETUP_DIR
+# or fall back to the destination set at configure time
+: ${_CATKIN_SETUP_DIR:=/opt/ros/melodic}
+_SETUP_UTIL="$_CATKIN_SETUP_DIR/_setup_util.py"
+unset _CATKIN_SETUP_DIR
+
+if [ ! -f "$_SETUP_UTIL" ]; then
+  echo "Missing Python script: $_SETUP_UTIL"
+  return 22
+fi
+
+# detect if running on Darwin platform
+_UNAME=`uname -s`
+_IS_DARWIN=0
+if [ "$_UNAME" = "Darwin" ]; then
+  _IS_DARWIN=1
+fi
+unset _UNAME
+
+# make sure to export all environment variables
+export CMAKE_PREFIX_PATH
+if [ $_IS_DARWIN -eq 0 ]; then
+  export LD_LIBRARY_PATH
+else
+  export DYLD_LIBRARY_PATH
+fi
+unset _IS_DARWIN
+export PATH
+export PKG_CONFIG_PATH
+export PYTHONPATH
+
+# remember type of shell if not already set
+if [ -z "$CATKIN_SHELL" ]; then
+  CATKIN_SHELL=sh
+fi
+
+# invoke Python script to generate necessary exports of environment variables
+# use TMPDIR if it exists, otherwise fall back to /tmp
+if [ -d "${TMPDIR:-}" ]; then
+  _TMPDIR="${TMPDIR}"
+else
+  _TMPDIR=/tmp
+fi
+_SETUP_TMP=`mktemp "${_TMPDIR}/setup.sh.XXXXXXXXXX"`
+unset _TMPDIR
+if [ $? -ne 0 -o ! -f "$_SETUP_TMP" ]; then
+  echo "Could not create temporary file: $_SETUP_TMP"
+  return 1
+fi
+CATKIN_SHELL=$CATKIN_SHELL "$_SETUP_UTIL" $@ ${CATKIN_SETUP_UTIL_ARGS:-} >> "$_SETUP_TMP"
+_RC=$?
+if [ $_RC -ne 0 ]; then
+  if [ $_RC -eq 2 ]; then
+    echo "Could not write the output of '$_SETUP_UTIL' to temporary file '$_SETUP_TMP': may be the disk if full?"
+  else
+    echo "Failed to run '\"$_SETUP_UTIL\" $@': return code $_RC"
+  fi
+  unset _RC
+  unset _SETUP_UTIL
+  rm -f "$_SETUP_TMP"
+  unset _SETUP_TMP
+  return 1
+fi
+unset _RC
+unset _SETUP_UTIL
+. "$_SETUP_TMP"
+rm -f "$_SETUP_TMP"
+unset _SETUP_TMP
+
+# source all environment hooks
+_i=0
+while [ $_i -lt $_CATKIN_ENVIRONMENT_HOOKS_COUNT ]; do
+  eval _envfile=\$_CATKIN_ENVIRONMENT_HOOKS_$_i
+  unset _CATKIN_ENVIRONMENT_HOOKS_$_i
+  eval _envfile_workspace=\$_CATKIN_ENVIRONMENT_HOOKS_${_i}_WORKSPACE
+  unset _CATKIN_ENVIRONMENT_HOOKS_${_i}_WORKSPACE
+  # set workspace for environment hook
+  CATKIN_ENV_HOOK_WORKSPACE=$_envfile_workspace
+  . "$_envfile"
+  unset CATKIN_ENV_HOOK_WORKSPACE
+  _i=$((_i + 1))
+done
+unset _i
+
+unset _CATKIN_ENVIRONMENT_HOOKS_COUNT
+
+```
+
+
+
 
 
 ### ROSパッケージをなんやかんやするためのツールを導入
