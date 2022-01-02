@@ -185,6 +185,9 @@ _CATKIN_SETUP_DIR=$(builtin cd "`dirname "${BASH_SOURCE[0]}"`" > /dev/null && pw
 ??? note "ダブルクォート"
     ダブルクォートで囲まれた文字列のうち，`$`，バッククォート，バックスラッシュのみを解釈し，それ以外をエスケープした文字列を得る
 
+??? note ドット
+    - 書式：`. ファイル名`
+    - 意味：`ファイル名` に書かれたコマンドを現在のシェルで実行する
 
 ``` bash linenums="1" title="/opt/ros/melodic/setup.sh"
 #!/usr/bin/env sh
