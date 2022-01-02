@@ -2,42 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://alnicomag.github.io/ros-note/</loc>
-         <lastmod>2021-12-31</lastmod>
+         <lastmod>2022-01-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alnicomag.github.io/ros-note/environment_setup/</loc>
-         <lastmod>2021-12-31</lastmod>
+         <lastmod>2022-01-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alnicomag.github.io/ros-note/environment_setup/ros_melodic/</loc>
-         <lastmod>2021-12-31</lastmod>
+         <lastmod>2022-01-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alnicomag.github.io/ros-note/environment_setup/ubuntu/</loc>
-         <lastmod>2021-12-31</lastmod>
+         <lastmod>2022-01-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alnicomag.github.io/ros-note/linux_literacy/</loc>
-         <lastmod>2021-12-31</lastmod>
+         <lastmod>2022-01-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://alnicomag.github.io/ros-note/linux_literacy/permission/</loc>
+         <lastmod>2022-01-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alnicomag.github.io/ros-note/linux_literacy/shell/</loc>
-         <lastmod>2021-12-31</lastmod>
+         <lastmod>2022-01-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alnicomag.github.io/ros-note/memo/</loc>
-         <lastmod>2021-12-31</lastmod>
+         <lastmod>2022-01-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alnicomag.github.io/ros-note/memo/urdf/</loc>
-         <lastmod>2021-12-31</lastmod>
+         <lastmod>2022-01-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://alnicomag.github.io/ros-note/ros_basic/</loc>
+         <lastmod>2022-01-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://alnicomag.github.io/ros-note/ros_basic/outline/</loc>
+         <lastmod>2022-01-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
