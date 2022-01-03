@@ -9,7 +9,7 @@ ROS を分かりたい．それだけ．
 
 ROS は正確に表記すると Robot Operating System となります．長いので普段は ROS と呼びます．名前に Operating System と付いていますが Windows や Mac OS のような OS とは異なり，ロボットのシステム開発を便利に進めるためのミドルウェアやツール群です．
 
-分かりやすい資料が ROS Japan Users Group により作成されています．
+「5分でワカル!? ROSとはなにか」という分かりやすい資料が ROS Japan Users Group により作成されていますので，是非一読することをお勧めします．
 
 <div style="text-align:center;">
     <iframe src="https://docs.google.com/presentation/d/1BZU3nFDiSrUU7wAMpqgY4kU6-65wxzvfHVRZigsHlDI/embed" width="800" height="500"></iframe>
