@@ -111,8 +111,9 @@ nav:
   - Home: index.md
   - Linux:
     - linux_literacy/index.md
-    - シェル: linux_literacy/shell.md
-    - 権限: linux_literacy//permission.md
+    - シェルとは: linux_literacy/shell.md
+    - コマンド操作: linux_literacy/command.md
+    - パーミッション: linux_literacy//permission.md
   - 環境構築:
     - environment_setup/index.md
     - Ubuntu仮想マシン: environment_setup/ubuntu.md
@@ -123,3 +124,6 @@ nav:
   - 雑記:
     - memo/index.md
     - URDF: memo/urdf.md
+  - 資料集:
+    - reference/index.md
+    - 書籍: reference/books.md
