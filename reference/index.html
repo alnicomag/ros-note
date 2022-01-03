@@ -6,19 +6,19 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Sanada Tatsuya" name="author"/>
-<link href="https://alnicomag.github.io/ros-note/memo/urdf/" rel="canonical"/>
-<link href="../../assets/images/favicon.png" rel="icon"/>
+<link href="https://alnicomag.github.io/ros-note/reference/" rel="canonical"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
-<title>URDF - ROS Note</title>
-<link href="../../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
+<title>ここに書くこと - ROS Note</title>
+<link href="../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <meta content="#ffa724" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Zen+Maru+Gothic:300,400,400i,700%7CSource+Code+Pro&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Zen Maru Gothic";--md-code-font:"Source Code Pro"}</style>
-<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<link href="../stylesheets/extra.css" rel="stylesheet"/>
 <link href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-72RDHRKN14"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-72RDHRKN14",{page_path:e.pathname})})})</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-72RDHRKN14"></script>
 </head>
@@ -27,7 +27,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#urdf">
+<a class="md-skip" href="#_1">
           Skip to content
         </a>
 </div>
@@ -35,7 +35,7 @@
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="ROS Note" class="md-header__button md-logo" data-md-component="logo" href="../.." title="ROS Note">
+<a aria-label="ROS Note" class="md-header__button md-logo" data-md-component="logo" href=".." title="ROS Note">
 <svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M32 224h32v192H32a31.962 31.962 0 0 1-32-32V256a31.962 31.962 0 0 1 32-32zm512-48v272a64.063 64.063 0 0 1-64 64H160a64.063 64.063 0 0 1-64-64V176a79.974 79.974 0 0 1 80-80h112V32a32 32 0 0 1 64 0v64h112a79.974 79.974 0 0 1 80 80zm-280 80a40 40 0 1 0-40 40 39.997 39.997 0 0 0 40-40zm-8 128h-64v32h64zm96 0h-64v32h64zm104-128a40 40 0 1 0-40 40 39.997 39.997 0 0 0 40-40zm-8 128h-64v32h64zm192-128v128a31.962 31.962 0 0 1-32 32h-32V224h32a31.962 31.962 0 0 1 32 32z"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -51,7 +51,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              URDF
+              ここに書くこと
             
           </span>
 </div>
@@ -104,32 +104,32 @@
 <div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../..">
+<a class="md-tabs__link" href="..">
       Home
     </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../linux_literacy/">
+<a class="md-tabs__link" href="../linux_literacy/">
         Linux
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../environment_setup/">
+<a class="md-tabs__link" href="../environment_setup/">
         環境構築
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../ros_basic/">
+<a class="md-tabs__link" href="../ros_basic/">
         ROSの基礎
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../">
+<a class="md-tabs__link" href="../memo/">
         雑記
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../reference/">
+<a class="md-tabs__link md-tabs__link--active" href="./">
         資料集
       </a>
 </li>
@@ -143,7 +143,7 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="ROS Note" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="ROS Note">
+<a aria-label="ROS Note" class="md-nav__button md-logo" data-md-component="logo" href=".." title="ROS Note">
 <svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M32 224h32v192H32a31.962 31.962 0 0 1-32-32V256a31.962 31.962 0 0 1 32-32zm512-48v272a64.063 64.063 0 0 1-64 64H160a64.063 64.063 0 0 1-64-64V176a79.974 79.974 0 0 1 80-80h112V32a32 32 0 0 1 64 0v64h112a79.974 79.974 0 0 1 80 80zm-280 80a40 40 0 1 0-40 40 39.997 39.997 0 0 0 40-40zm-8 128h-64v32h64zm96 0h-64v32h64zm104-128a40 40 0 1 0-40 40 39.997 39.997 0 0 0 40-40zm-8 128h-64v32h64zm192-128v128a31.962 31.962 0 0 1-32 32h-32V224h32a31.962 31.962 0 0 1 32 32z"></path></svg>
 </a>
     ROS Note
@@ -160,14 +160,14 @@
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../..">
+<a class="md-nav__link" href="..">
         Home
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../linux_literacy/">Linux</a>
+<a href="../linux_literacy/">Linux</a>
 <label for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -179,17 +179,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../linux_literacy/shell/">
+<a class="md-nav__link" href="../linux_literacy/shell/">
         シェルとは
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../linux_literacy/command/">
+<a class="md-nav__link" href="../linux_literacy/command/">
         コマンド操作
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../linux_literacy/permission/">
+<a class="md-nav__link" href="../linux_literacy/permission/">
         パーミッション
       </a>
 </li>
@@ -199,7 +199,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../environment_setup/">環境構築</a>
+<a href="../environment_setup/">環境構築</a>
 <label for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -211,12 +211,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../environment_setup/ubuntu/">
+<a class="md-nav__link" href="../environment_setup/ubuntu/">
         Ubuntu仮想マシン
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../environment_setup/ros_melodic/">
+<a class="md-nav__link" href="../environment_setup/ros_melodic/">
         ROS Melodic
       </a>
 </li>
@@ -226,7 +226,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../ros_basic/">ROSの基礎</a>
+<a href="../ros_basic/">ROSの基礎</a>
 <label for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -238,17 +238,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../ros_basic/outline/">
+<a class="md-nav__link" href="../ros_basic/outline/">
         全体像
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../">雑記</a>
+<a href="../memo/">雑記</a>
 <label for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -259,36 +259,18 @@
           雑記
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          URDF
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../memo/urdf/">
         URDF
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#urdf">
-    URDF とは
-  </a>
 </li>
 </ul>
 </nav>
 </li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../reference/">資料集</a>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index md-nav__link--active">
+<a href="./">資料集</a>
 <label for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -300,7 +282,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../reference/books/">
+<a class="md-nav__link" href="books/">
         書籍
       </a>
 </li>
@@ -316,67 +298,14 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#urdf">
-    URDF とは
-  </a>
-</li>
-</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>URDF</h1>
-<h2 id="urdf">URDF とは<a class="headerlink" href="#urdf" title="Permanent link">§</a></h2>
-<p>URDF とは Unified Robot Description Format の省略形で，リンクとジョイントと呼ばれる2種類のノードによって構成される木構造を用いてロボットの機械的構造を表現するファイルフォーマットです．根ノードは必ずリンクノードとなり，リンクノードは1つ以上のジョイントノードを子ノードとしてを持ち，ジョイントノードはただ1つのリンクノードを子ノードとして持ちます．そのため，葉ノードは全てリンクノードとなります．木構造を採用しているため直接的に閉リンクを表現することはできません．</p>
-<p>木構造を記述する手段としては XML(Extensible Markup Language) が採用されています．XML は汎用的に利用できる構造記述のためのマークアップ言語で，文法は完全に異なりますが立ち位置としての類似言語には JSON や YAML などが挙げられます．</p>
-<p>ここで，ボディに左右の車輪が付き1つの回転アームと1つのセンサが載っている簡単な2輪移動ロボットを URDF で表現することを考えます．</p>
-<div class="mermaid">flowchart TB
-    L1(Body)
-    J2{{Joint&lt;br&gt;回転}}
-    L2(Right Wheel)
-    J3{{Joint&lt;br&gt;回転}}
-    L3(Left Wheel)
-    J4{{Joint&lt;br&gt;固定}}
-    L4(ArmBase)
-    J5{{Joint&lt;br&gt;回転}}
-    L5(Arm)
-    J6{{Joint&lt;br&gt;固定}}
-    L6(Sensor)
-
-    L1 --&gt; J2 --&gt; L2
-    L1 --&gt; J3 --&gt; L3
-    L1 --&gt; J4 --&gt; L4 --&gt; J5 --&gt; L5
-    L1 --&gt; J6 --&gt; L6</div>
-<p>この図は URDF の木構造を図で表したものです．角丸ボックスがリンクを，六角形ボックスがジョイントを表しています．リンクが複数のジョイントを子ノードとして持っていても，ジョイントが複数のリンクを子ノードして持っていることはないということが確認できると思います．</p>
-<p>ジョイントにはリンク同士の接合状態を説明させることができ，車輪はそれぞれ回転の自由度を持ち，センサは固定されているということが表現されています．リンクノードにはビジュアライゼーションに利用するための3Dデータを対応付けたり，質量や慣性モーメントなどの物理シミュレーションに必要な情報を書き込むことができます．</p>
-<p>このような構造化されたデータを用意しておくことで，リンク間での座標変換処理なども簡潔に記述することが可能となります．</p>
-<p>以下のコードは1つのリンクのみを持つ最も簡単な URDF のサンプルです．</p>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
-
-<span class="nt">&lt;robot</span> <span class="na">name=</span><span class="s">"percepption_camera"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;link</span> <span class="na">name=</span><span class="s">"base_link"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;visual&gt;</span>
-      <span class="nt">&lt;geometry&gt;</span>
-        <span class="nt">&lt;mesh</span> <span class="na">filename=</span><span class="s">"package://perceptioncam_description/meshes/EnclosureAssy.stl"</span> <span class="na">scale=</span><span class="s">"0.001 0.001 0.001"</span><span class="nt">/&gt;</span>
-      <span class="nt">&lt;/geometry&gt;</span>
-    <span class="nt">&lt;/visual&gt;</span>
-  <span class="nt">&lt;/link&gt;</span>
-<span class="nt">&lt;/robot&gt;</span>
-</code></pre></div>
-<p>これを Rviz と呼ばれる 3D 可視化ツールによって表示させると以下のようになります．</p>
-<figure>
-<p><img alt="" src="FHiv0hoaAAUx_xf.jfif"/>
-</p>
-<figcaption>Fig. 1 単一リンクのみを持つ URDF を RViz で可視化させた例</figcaption>
-</figure>
+<h1 id="_1">ここに書くこと<a class="headerlink" href="#_1" title="Permanent link">§</a></h1>
+<p>ROS に関する書籍や参考文献の紹介．</p>
 </article>
 </div>
 </div>
@@ -387,7 +316,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: ここに書くこと" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
+<a aria-label="Previous: URDF" class="md-footer__link md-footer__link--prev" href="../memo/urdf/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -396,17 +325,17 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              ここに書くこと
+              URDF
             </div>
 </div>
 </a>
-<a aria-label="Next: ここに書くこと" class="md-footer__link md-footer__link--next" href="../../reference/" rel="next">
+<a aria-label="Next: 書籍" class="md-footer__link md-footer__link--next" href="books/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              ここに書くこと
+              書籍
             </div>
 </div>
 <div class="md-footer__button md-icon">
@@ -439,32 +368,9 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "navigation.indexes", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
-<script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "navigation.indexes", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+<script src="../assets/javascripts/bundle.289a2a4b.min.js"></script>
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>mermaid.initialize({
-    theme: "base",
-    themeVariables: {
-        fontFamily: "verdana",
-        fontSize: "12px",
-        darkMode: false,
-        background: "#fff",
-        primaryColor: "#DEDFEF",
-        nodeBorder: "#000",
-        clusterBkg: "#fff",
-        clusterBorder: "#000",
-        edgeLabelBackground: "#eee"
-    },
-    logLevel: 5,
-    securityLevel: "loose",
-    startOnLoad: true,
-    arrowMarkerAbsolute: false,
-    flowchart: {
-        diagramPadding: 8,
-        nodeSpacing: 50,
-        rankSpacing: 50,
-        useMaxWidth: false
-    }
-});</script></body>
+</body>
 </html>

@@ -6,10 +6,10 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Sanada Tatsuya" name="author"/>
-<link href="https://alnicomag.github.io/ros-note/memo/urdf/" rel="canonical"/>
+<link href="https://alnicomag.github.io/ros-note/reference/books/" rel="canonical"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
-<title>URDF - ROS Note</title>
+<title>書籍 - ROS Note</title>
 <link href="../../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <meta content="#ffa724" name="theme-color"/>
@@ -27,7 +27,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#urdf">
+<a class="md-skip" href="#_1">
           Skip to content
         </a>
 </div>
@@ -51,7 +51,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              URDF
+              書籍
             
           </span>
 </div>
@@ -124,12 +124,12 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../">
+<a class="md-tabs__link" href="../../memo/">
         雑記
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../reference/">
+<a class="md-tabs__link md-tabs__link--active" href="../">
         資料集
       </a>
 </li>
@@ -245,10 +245,10 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../">雑記</a>
+<a href="../../memo/">雑記</a>
 <label for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -259,36 +259,18 @@
           雑記
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          URDF
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../memo/urdf/">
         URDF
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#urdf">
-    URDF とは
-  </a>
 </li>
 </ul>
 </nav>
 </li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../reference/">資料集</a>
+<a href="../">資料集</a>
 <label for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -299,10 +281,33 @@
           資料集
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../reference/books/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          書籍
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         書籍
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    出版本
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    同人誌
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -322,8 +327,13 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#urdf">
-    URDF とは
+<a class="md-nav__link" href="#_1">
+    出版本
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    同人誌
   </a>
 </li>
 </ul>
@@ -333,50 +343,101 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>URDF</h1>
-<h2 id="urdf">URDF とは<a class="headerlink" href="#urdf" title="Permanent link">§</a></h2>
-<p>URDF とは Unified Robot Description Format の省略形で，リンクとジョイントと呼ばれる2種類のノードによって構成される木構造を用いてロボットの機械的構造を表現するファイルフォーマットです．根ノードは必ずリンクノードとなり，リンクノードは1つ以上のジョイントノードを子ノードとしてを持ち，ジョイントノードはただ1つのリンクノードを子ノードとして持ちます．そのため，葉ノードは全てリンクノードとなります．木構造を採用しているため直接的に閉リンクを表現することはできません．</p>
-<p>木構造を記述する手段としては XML(Extensible Markup Language) が採用されています．XML は汎用的に利用できる構造記述のためのマークアップ言語で，文法は完全に異なりますが立ち位置としての類似言語には JSON や YAML などが挙げられます．</p>
-<p>ここで，ボディに左右の車輪が付き1つの回転アームと1つのセンサが載っている簡単な2輪移動ロボットを URDF で表現することを考えます．</p>
-<div class="mermaid">flowchart TB
-    L1(Body)
-    J2{{Joint&lt;br&gt;回転}}
-    L2(Right Wheel)
-    J3{{Joint&lt;br&gt;回転}}
-    L3(Left Wheel)
-    J4{{Joint&lt;br&gt;固定}}
-    L4(ArmBase)
-    J5{{Joint&lt;br&gt;回転}}
-    L5(Arm)
-    J6{{Joint&lt;br&gt;固定}}
-    L6(Sensor)
-
-    L1 --&gt; J2 --&gt; L2
-    L1 --&gt; J3 --&gt; L3
-    L1 --&gt; J4 --&gt; L4 --&gt; J5 --&gt; L5
-    L1 --&gt; J6 --&gt; L6</div>
-<p>この図は URDF の木構造を図で表したものです．角丸ボックスがリンクを，六角形ボックスがジョイントを表しています．リンクが複数のジョイントを子ノードとして持っていても，ジョイントが複数のリンクを子ノードして持っていることはないということが確認できると思います．</p>
-<p>ジョイントにはリンク同士の接合状態を説明させることができ，車輪はそれぞれ回転の自由度を持ち，センサは固定されているということが表現されています．リンクノードにはビジュアライゼーションに利用するための3Dデータを対応付けたり，質量や慣性モーメントなどの物理シミュレーションに必要な情報を書き込むことができます．</p>
-<p>このような構造化されたデータを用意しておくことで，リンク間での座標変換処理なども簡潔に記述することが可能となります．</p>
-<p>以下のコードは1つのリンクのみを持つ最も簡単な URDF のサンプルです．</p>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
-
-<span class="nt">&lt;robot</span> <span class="na">name=</span><span class="s">"percepption_camera"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;link</span> <span class="na">name=</span><span class="s">"base_link"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;visual&gt;</span>
-      <span class="nt">&lt;geometry&gt;</span>
-        <span class="nt">&lt;mesh</span> <span class="na">filename=</span><span class="s">"package://perceptioncam_description/meshes/EnclosureAssy.stl"</span> <span class="na">scale=</span><span class="s">"0.001 0.001 0.001"</span><span class="nt">/&gt;</span>
-      <span class="nt">&lt;/geometry&gt;</span>
-    <span class="nt">&lt;/visual&gt;</span>
-  <span class="nt">&lt;/link&gt;</span>
-<span class="nt">&lt;/robot&gt;</span>
-</code></pre></div>
-<p>これを Rviz と呼ばれる 3D 可視化ツールによって表示させると以下のようになります．</p>
-<figure>
-<p><img alt="" src="FHiv0hoaAAUx_xf.jfif"/>
-</p>
-<figcaption>Fig. 1 単一リンクのみを持つ URDF を RViz で可視化させた例</figcaption>
-</figure>
+<h1>書籍</h1>
+<h2 id="_1">出版本<a class="headerlink" href="#_1" title="Permanent link">§</a></h2>
+<p>ROS と ROS2 に関する出版本の情報を集めてみました．出版年月の古いものから新しいものへと並べています．</p>
+<hr/>
+<div style="display:flex">
+<div style="min-width:200px;margin:0 1rem">
+<a href="https://www.amazon.co.jp/ROS%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E9%8A%AD-%E9%A3%9B/dp/4627853416?__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&amp;crid=2LRT25IXHTVAH&amp;keywords=ROS&amp;qid=1641202728&amp;sprefix=ros%2Caps%2C193&amp;sr=8-8&amp;linkCode=li3&amp;tag=alnicomag-22&amp;linkId=82b6a43cca7d1fae6d8683c85aef2ffe&amp;language=ja_JP&amp;ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=4627853416&amp;Format=_SL250_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=alnicomag-22&amp;language=ja_JP"/></a><img alt="" border="0" height="1" src="https://ir-jp.amazon-adsystem.com/e/ir?t=alnicomag-22&amp;language=ja_JP&amp;l=li3&amp;o=9&amp;a=4627853416" style="border:none !important; margin:0px !important;" width="1">
+</img></div>
+<div>
+<p>銭 飛『ROSプログラミング』森北出版，2016</p>
+</div>
+</div>
+<hr/>
+<div style="display:flex">
+<div style="min-width:200px;margin:0 1rem">
+<a href="https://www.amazon.co.jp/dp/4822239292?&amp;linkCode=li3&amp;tag=alnicomag-22&amp;linkId=83b18ef1b6d0e6970c0b167acdebf2db&amp;language=ja_JP&amp;ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=4822239292&amp;Format=_SL250_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=alnicomag-22&amp;language=ja_JP"/></a><img alt="" border="0" height="1" src="https://ir-jp.amazon-adsystem.com/e/ir?t=alnicomag-22&amp;language=ja_JP&amp;l=li3&amp;o=9&amp;a=4822239292" style="border:none !important; margin:0px !important;" width="1">
+</img></div>
+<div>
+<p>上田 隆一『Raspberry Piで学ぶROSロボット入門』日経BP，2017</p>
+</div>
+</div>
+<hr/>
+<div style="display:flex">
+<div style="min-width:200px;margin:0 1rem">
+<a href="https://www.amazon.co.jp/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0ROS-%E2%80%95Python%E3%81%AB%E3%82%88%E3%82%8B%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E9%96%8B%E7%99%BA-%E3%82%AA%E3%83%A9%E3%82%A4%E3%83%AA%E3%83%BC%E3%83%BB%E3%82%B8%E3%83%A3%E3%83%91%E3%83%B3-Morgan-Quigley/dp/4873118093?__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&amp;crid=2617YJ5EGG3I0&amp;keywords=%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0ROS+%E2%80%95Python%E3%81%AB%E3%82%88%E3%82%8B%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E9%96%8B%E7%99%BA&amp;qid=1641201934&amp;s=books&amp;sprefix=%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0ros+python%E3%81%AB%E3%82%88%E3%82%8B%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E9%96%8B%E7%99%BA%2Cstripbooks%2C195&amp;sr=1-1&amp;linkCode=li3&amp;tag=alnicomag-22&amp;linkId=10bf8ac8a382f6e7a710afd08d7929c8&amp;language=ja_JP&amp;ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=4873118093&amp;Format=_SL250_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=alnicomag-22&amp;language=ja_JP"/></a><img alt="" border="0" height="1" src="https://ir-jp.amazon-adsystem.com/e/ir?t=alnicomag-22&amp;language=ja_JP&amp;l=li3&amp;o=9&amp;a=4873118093" style="border:none !important; margin:0px !important;" width="1">
+</img></div>
+<div>
+<p>Morgan Quigley ほか『プログラミングROS ―Pythonによるロボットアプリケーション開発』オライリージャパン，2017</p>
+</div>
+</div>
+<hr/>
+<div style="display:flex">
+<div style="min-width:200px;margin:0 1rem">
+<a href="https://www.amazon.co.jp/ROS%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%90%E3%82%A4%E3%83%96%E3%83%AB-%E8%A1%A8-%E5%85%81%E3%80%93/dp/4274221962?pd_rd_w=c0fRJ&amp;pf_rd_p=d8f6e0ab-48ef-4eca-99d5-60d97e927468&amp;pf_rd_r=Z47QDNAJXF5TAQKFDJ7K&amp;pd_rd_r=ad6c959d-549c-4c49-875e-10e271e2d171&amp;pd_rd_wg=3gn9C&amp;pd_rd_i=4274221962&amp;psc=1&amp;linkCode=li3&amp;tag=alnicomag-22&amp;linkId=5c8c5b45362a8ae39bffa0fbbbd19ecb&amp;language=ja_JP&amp;ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=4274221962&amp;Format=_SL250_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=alnicomag-22&amp;language=ja_JP"/></a><img alt="" border="0" height="1" src="https://ir-jp.amazon-adsystem.com/e/ir?t=alnicomag-22&amp;language=ja_JP&amp;l=li3&amp;o=9&amp;a=4274221962" style="border:none !important; margin:0px !important;" width="1">
+</img></div>
+<div>
+<p>表 允皙 ほか『ROSロボットプログラミングバイブル』オーム社，2018</p>
+</div>
+</div>
+<hr/>
+<div style="display:flex">
+<div style="min-width:200px;margin:0 1rem">
+<a href="https://www.amazon.co.jp/%E5%AE%9F%E7%94%A8%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E9%96%8B%E7%99%BA%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AEROS%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E8%A5%BF%E7%94%B0-%E5%81%A5/dp/462767581X?pd_rd_w=m4xuL&amp;pf_rd_p=d8f6e0ab-48ef-4eca-99d5-60d97e927468&amp;pf_rd_r=XZF2VA1RY9H1C8068XZM&amp;pd_rd_r=4f1db8ee-82aa-4e36-8acc-18f577c28143&amp;pd_rd_wg=D5d0W&amp;pd_rd_i=462767581X&amp;psc=1&amp;linkCode=li3&amp;tag=alnicomag-22&amp;linkId=4934c26f33190f45291f69d6a3107d00&amp;language=ja_JP&amp;ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=462767581X&amp;Format=_SL250_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=alnicomag-22&amp;language=ja_JP"/></a><img alt="" border="0" height="1" src="https://ir-jp.amazon-adsystem.com/e/ir?t=alnicomag-22&amp;language=ja_JP&amp;l=li3&amp;o=9&amp;a=462767581X" style="border:none !important; margin:0px !important;" width="1">
+</img></div>
+<div>
+<p>西田 健 ほか『実用ロボット開発のためのROSプログラミング』森北出版，2018</p>
+</div>
+</div>
+<hr/>
+<div style="display:flex">
+<div style="min-width:200px;margin:0 1rem">
+<a href="https://www.amazon.co.jp/ROS2%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%88%E3%81%86-%E6%AC%A1%E4%B8%96%E4%BB%A3%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E8%BF%91%E8%97%A4-%E8%B1%8A/dp/4297107422?_encoding=UTF8&amp;qid=1641202117&amp;sr=1-3&amp;linkCode=li3&amp;tag=alnicomag-22&amp;linkId=1965d50110bbe4d0028ebab2af88f6d0&amp;language=ja_JP&amp;ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=4297107422&amp;Format=_SL250_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=alnicomag-22&amp;language=ja_JP"/></a><img alt="" border="0" height="1" src="https://ir-jp.amazon-adsystem.com/e/ir?t=alnicomag-22&amp;language=ja_JP&amp;l=li3&amp;o=9&amp;a=4297107422" style="border:none !important; margin:0px !important;" width="1">
+</img></div>
+<div>
+<p>近藤 豊『ROS2ではじめよう次世代ロボットプログラミング』技術評論社，2019</p>
+</div>
+</div>
+<hr/>
+<div style="display:flex">
+<div style="min-width:200px;margin:0 1rem">
+<a href="https://www.amazon.co.jp/%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0ROS2%E5%85%A5%E9%96%80-%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E5%85%A5%E9%96%80%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA-%E5%B2%A1%E7%94%B0-%E6%B5%A9%E4%B9%8B/dp/4904774906?_encoding=UTF8&amp;pd_rd_w=djhR1&amp;pf_rd_p=208f75af-cd27-4a27-9a09-9908845ceed5&amp;pf_rd_r=TWZ6FWM7CKZBVM64HVS0&amp;pd_rd_r=62730809-8610-46f8-8cda-905639a2041b&amp;pd_rd_wg=gPV1B&amp;linkCode=li3&amp;tag=alnicomag-22&amp;linkId=848d29954f606ce0a6f04420fd2be6d6&amp;language=ja_JP&amp;ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=4904774906&amp;Format=_SL250_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=alnicomag-22&amp;language=ja_JP"/></a><img alt="" border="0" height="1" src="https://ir-jp.amazon-adsystem.com/e/ir?t=alnicomag-22&amp;language=ja_JP&amp;l=li3&amp;o=9&amp;a=4904774906" style="border:none !important; margin:0px !important;" width="1">
+</img></div>
+<div>
+<p>岡田 浩之『ロボットプログラミングROS2入門』科学情報出版株式会社，2020</p>
+</div>
+</div>
+<hr/>
+<div style="display:flex">
+<div style="min-width:200px;margin:0 1rem">
+<a href="https://www.amazon.co.jp/Scamper%E3%81%A8RaspberryPi%E3%81%A7%E5%AD%A6%E3%81%B6-ROS2%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E5%85%A5%E9%96%80-%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%E3%83%AA%E3%83%90%E3%82%B9%E3%83%88/dp/4274226808?pd_rd_w=SBpfT&amp;pf_rd_p=949e26f5-c2ef-4c96-bfde-49d7614d0317&amp;pf_rd_r=3N6VFFRMRJZYRKN1AYGT&amp;pd_rd_r=46e5acd7-6143-4c43-bf0c-293b9cb473c3&amp;pd_rd_wg=h8sEL&amp;pd_rd_i=4274226808&amp;psc=1&amp;linkCode=li3&amp;tag=alnicomag-22&amp;linkId=8d1f6339866876733266a5ddf592b83a&amp;language=ja_JP&amp;ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=4274226808&amp;Format=_SL250_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=alnicomag-22&amp;language=ja_JP"/></a><img alt="" border="0" height="1" src="https://ir-jp.amazon-adsystem.com/e/ir?t=alnicomag-22&amp;language=ja_JP&amp;l=li3&amp;o=9&amp;a=4274226808" style="border:none !important; margin:0px !important;" width="1">
+</img></div>
+<div>
+<p>鹿貫悠多『ScamperとRaspberryPiで学ぶ ROS2プログラミング入門』株式会社リバスト監修，オーム社，2021</p>
+</div>
+</div>
+<hr/>
+<div style="display:flex">
+<div style="min-width:200px;margin:0 1rem">
+<a href="https://www.amazon.co.jp/dp/4910558004?&amp;linkCode=li3&amp;tag=alnicomag-22&amp;linkId=1705dbf2e31f0a2aac7eacf5f33243f8&amp;language=ja_JP&amp;ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=4910558004&amp;Format=_SL250_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=alnicomag-22&amp;language=ja_JP"/></a><img alt="" border="0" height="1" src="https://ir-jp.amazon-adsystem.com/e/ir?t=alnicomag-22&amp;language=ja_JP&amp;l=li3&amp;o=9&amp;a=4910558004" style="border:none !important; margin:0px !important;" width="1">
+</img></div>
+<div>
+<p>内木場 文男『ロボットプログラミングROS2の実装・実践 -実用ロボットの開発-』科学情報出版株式会社，2021</p>
+</div>
+</div>
+<hr/>
+<div style="display:flex">
+<div style="min-width:200px;margin:0 1rem">
+<a href="https://www.amazon.co.jp/ROS%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8B%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E6%94%B9%E8%A8%82%E7%89%88-I-BOOKS-%E5%B0%8F%E5%80%89/dp/4777521680?__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&amp;crid=2DEER8ZWPFKIM&amp;keywords=ROS%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8B%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0&amp;qid=1641149272&amp;s=books&amp;sprefix=ros%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8B%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%2Cstripbooks%2C161&amp;sr=1-1&amp;linkCode=li3&amp;tag=alnicomag-22&amp;linkId=56b7f0ef782ad9e64493f76f3bf7b9b9&amp;language=ja_JP&amp;ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=4777521680&amp;Format=_SL250_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=alnicomag-22&amp;language=ja_JP"/></a><img alt="" border="0" height="1" src="https://ir-jp.amazon-adsystem.com/e/ir?t=alnicomag-22&amp;language=ja_JP&amp;l=li3&amp;o=9&amp;a=4777521680" style="border:none !important; margin:0px !important;" width="1">
+</img></div>
+<div>
+<p>小倉 崇『ROSではじめるロボットプログラミング[改訂版]』工学社，2021</p>
+</div>
+</div>
+<h2 id="_2">同人誌<a class="headerlink" href="#_2" title="Permanent link">§</a></h2>
+<p>こそこそ団『ROSではじめるホビーロボット』</p>
 </article>
 </div>
 </div>
@@ -398,19 +459,6 @@
               </span>
               ここに書くこと
             </div>
-</div>
-</a>
-<a aria-label="Next: ここに書くこと" class="md-footer__link md-footer__link--next" href="../../reference/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Next
-              </span>
-              ここに書くこと
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
 </div>
 </a>
 </nav>
@@ -443,28 +491,5 @@
 <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>mermaid.initialize({
-    theme: "base",
-    themeVariables: {
-        fontFamily: "verdana",
-        fontSize: "12px",
-        darkMode: false,
-        background: "#fff",
-        primaryColor: "#DEDFEF",
-        nodeBorder: "#000",
-        clusterBkg: "#fff",
-        clusterBorder: "#000",
-        edgeLabelBackground: "#eee"
-    },
-    logLevel: 5,
-    securityLevel: "loose",
-    startOnLoad: true,
-    arrowMarkerAbsolute: false,
-    flowchart: {
-        diagramPadding: 8,
-        nodeSpacing: 50,
-        rankSpacing: 50,
-        useMaxWidth: false
-    }
-});</script></body>
+</body>
 </html>

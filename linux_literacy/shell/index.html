@@ -9,7 +9,7 @@
 <link href="https://alnicomag.github.io/ros-note/linux_literacy/shell/" rel="canonical"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
-<title>シェル - ROS Note</title>
+<title>シェルとは - ROS Note</title>
 <link href="../../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <meta content="#ffa724" name="theme-color"/>
@@ -51,7 +51,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              シェル
+              シェルとは
             
           </span>
 </div>
@@ -128,6 +128,11 @@
         雑記
       </a>
 </li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../reference/">
+        資料集
+      </a>
+</li>
 </ul>
 </div>
 </nav>
@@ -176,11 +181,11 @@
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          シェル
+          シェルとは
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        シェル
+        シェルとは
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -195,9 +200,9 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    シェルの分類
+    コマンドラインシェルの分類
   </a>
-<nav aria-label="シェルの分類" class="md-nav">
+<nav aria-label="コマンドラインシェルの分類" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
@@ -218,63 +223,19 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tips">
-    ターミナル操作で遭難しないための Tips
-  </a>
-<nav aria-label="ターミナル操作で遭難しないための Tips" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
 <a class="md-nav__link" href="#_6">
-    カーソル移動
+    色々あるコマンドラインシェル
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
-    コピペ
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
-    履歴
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_9">
-    その他
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_10">
-    頻出するシェルコマンドの文法
-  </a>
-<nav aria-label="頻出するシェルコマンドの文法" class="md-nav">
+<nav aria-label="色々あるコマンドラインシェル" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_11">
-    リダイレクション
+<a class="md-nav__link" href="#bourne-shell-sh">
+    Bourne Shell (sh)
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_12">
-    パイプ
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_13">
-    括弧
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_14">
-    クォーテーション
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_15">
-    条件分岐
+<a class="md-nav__link" href="#bash-bash">
+    Bash (bash)
   </a>
 </li>
 </ul>
@@ -282,10 +243,15 @@
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../command/">
+        コマンド操作
+      </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../permission/">
-        権限
+        パーミッション
       </a>
 </li>
 </ul>
@@ -362,6 +328,28 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../reference/">資料集</a>
+<label for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="資料集" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          資料集
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/books/">
+        書籍
+      </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </div>
@@ -383,9 +371,9 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    シェルの分類
+    コマンドラインシェルの分類
   </a>
-<nav aria-label="シェルの分類" class="md-nav">
+<nav aria-label="コマンドラインシェルの分類" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
@@ -406,63 +394,19 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tips">
-    ターミナル操作で遭難しないための Tips
-  </a>
-<nav aria-label="ターミナル操作で遭難しないための Tips" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
 <a class="md-nav__link" href="#_6">
-    カーソル移動
+    色々あるコマンドラインシェル
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
-    コピペ
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
-    履歴
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_9">
-    その他
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_10">
-    頻出するシェルコマンドの文法
-  </a>
-<nav aria-label="頻出するシェルコマンドの文法" class="md-nav">
+<nav aria-label="色々あるコマンドラインシェル" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_11">
-    リダイレクション
+<a class="md-nav__link" href="#bourne-shell-sh">
+    Bourne Shell (sh)
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_12">
-    パイプ
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_13">
-    括弧
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_14">
-    クォーテーション
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_15">
-    条件分岐
+<a class="md-nav__link" href="#bash-bash">
+    Bash (bash)
   </a>
 </li>
 </ul>
@@ -475,7 +419,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>シェル</h1>
+<h1>シェルとは</h1>
 <h2 id="_1">ターミナルソフトとシェル<a class="headerlink" href="#_1" title="Permanent link">§</a></h2>
 <p>GUI 環境の Ubuntu にログインした後，デフォルトでインストールされている「Terminal」という名前のアプリケーションを利用して作業を始めると思います．Mac OS であれば「iTerm」というターミナルソフトがインストールされています．これはターミナルソフトと呼ばれるものです．シェルとは違います．</p>
 <figure>
@@ -484,156 +428,71 @@
 <figcaption>Fig. 1 アプリケーション「Terminal」の見た目</figcaption>
 </figure>
 <p>このターミナルソフトで様々なコマンド打ち込むことでシェルに対して命令を出すことができます．シェルはこの命令を解釈してカーネルに伝達することで実際の処理が行われます．つまり，シェルは画面上に見えているものを指すわけではなく，その画面を通して動作しているプログラムということになります．</p>
-<h2 id="_2">シェルの分類<a class="headerlink" href="#_2" title="Permanent link">§</a></h2>
+<p>ターミナルソフトにおいて CUI ベースの操作体系をとるこのようなシェルを特にコマンドラインシェルと呼びます．</p>
+<h2 id="_2">コマンドラインシェルの分類<a class="headerlink" href="#_2" title="Permanent link">§</a></h2>
 <p>シェルはターミナルソフト上で見えているものではなく，プログラムです．ただ1つだけ起動するという訳ではなく，複数起動することもあります．呼び出されれば起動し，処理が終われば終了します．あくまでもプログラムのひとつなので，その他の一般的なプログラムの挙動と同じ概念で考えることができます．</p>
-<p>ただ，シェルがどの条件で起動したのかによって色々と呼び分けることがあります．その理由は起動のタイミングによって，ユーザーが指示を出す前に既に読み込まれている変数の種類に違いがあるからです．この変数には例えば「PATH」のようなプログラムを探しに行くディレクトリの情報などがあり，このような変数の総称を環境変数と呼びます．</p>
+<p>ただ，シェルがどのような条件で起動したのかによって呼び分けることがあります．その理由は起動のタイミングによって，ユーザーが指示を出す前に既に読み込まれている変数の種類に違いがあるからです．この変数には例えば「PATH」のようなプログラムを探しに行くディレクトリの情報などがあり，このような変数の総称を環境変数と呼びます．</p>
 <h3 id="_3">ログインシェルと非ログインシェル<a class="headerlink" href="#_3" title="Permanent link">§</a></h3>
 <p>コンピュータのあるユーザに対してログインしたその時に起動されるシェルはログインシェルと呼ばれます．例えば SSH 接続を利用してリモートマシンにログインした時です．</p>
 <h3 id="_4">対話的シェルと非対話的シェル<a class="headerlink" href="#_4" title="Permanent link">§</a></h3>
 <h3 id="_5">カレントシェルとサブシェル<a class="headerlink" href="#_5" title="Permanent link">§</a></h3>
-<h2 id="tips">ターミナル操作で遭難しないための Tips<a class="headerlink" href="#tips" title="Permanent link">§</a></h2>
-<p>覚えておいたほうが絶対に幸せになれると思われるキーボード操作を表にしておきます．</p>
-<h3 id="_6">カーソル移動<a class="headerlink" href="#_6" title="Permanent link">§</a></h3>
-<p>カーソル位置は <span class="keys"><kbd class="key-arrow-left">Left</kbd></span> と <span class="keys"><kbd class="key-arrow-right">Right</kbd></span> で移動できますが，これを覚えておくと行頭と行末への移動が一瞬です．</p>
-<table>
-<thead>
-<tr>
-<th>タイプ</th>
-<th>機能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-a">A</kbd></span></td>
-<td>行頭まで移動</td>
-</tr>
-<tr>
-<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-e">E</kbd></span></td>
-<td>行末まで移動</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_7">コピペ<a class="headerlink" href="#_7" title="Permanent link">§</a></h3>
-<table>
-<thead>
-<tr>
-<th>タイプ</th>
-<th>機能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-k">K</kbd></span></td>
-<td>カーソル位置から行末まで切り取り</td>
-</tr>
-<tr>
-<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-u">U</kbd></span></td>
-<td>行頭からカーソル位置まで切り取り</td>
-</tr>
-<tr>
-<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-y">Y</kbd></span></td>
-<td>最後の切り取り文字を貼り付け</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_8">履歴<a class="headerlink" href="#_8" title="Permanent link">§</a></h3>
-<p>同じコマンドを何度も手打ちする必要はありません．</p>
-<table>
-<thead>
-<tr>
-<th>タイプ</th>
-<th>機能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="keys"><kbd class="key-arrow-up">Up</kbd></span> または <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-p">P</kbd></span></td>
-<td>行を一つ前のコマンド履歴に置き換え</td>
-</tr>
-<tr>
-<td><span class="keys"><kbd class="key-arrow-down">Down</kbd></span> または <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-n">N</kbd></span></td>
-<td>行を一つ後のコマンド履歴に置き換え</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_9">その他<a class="headerlink" href="#_9" title="Permanent link">§</a></h3>
-<table>
-<thead>
-<tr>
-<th>タイプ</th>
-<th>機能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span></td>
-<td>実行中のコマンドを強制終了</td>
-</tr>
-<tr>
-<td><span class="keys"><kbd class="key-tab">Tab</kbd></span></td>
-<td>入力補完</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_10">頻出するシェルコマンドの文法<a class="headerlink" href="#_10" title="Permanent link">§</a></h2>
-<h3 id="_11">リダイレクション<a class="headerlink" href="#_11" title="Permanent link">§</a></h3>
-<div class="admonition note">
-<p class="admonition-title">リダイレクション</p>
-<p><div class="highlight"><span class="filename">書式</span><pre><span></span><code>コマンド &gt; ファイル名
+<p>シェルはプログラムの一種なので，シェルが起動した時，その実行中のプログラムは OS からはひとつのプロセスとして認識されます．起動しているプロセスは <code>pstree</code> というコマンドで確認できます．その結果を以下に示します．</p>
+<div class="highlight"><pre><span></span><code>systemd─┬─ModemManager───2*[{ModemManager}]
+        ├─NetworkManager─┬─dhclient
+        │                └─2*[{NetworkManager}]
+        ├─VGAuthService
+        ├─accounts-daemon───2*[{accounts-daemon}]
+        ├─acpid
+        ├─avahi-daemon───avahi-daemon
+        ├─bluetoothd
+        ├─boltd───2*[{boltd}]
+        ├─colord───2*[{colord}]
+        ├─cron
+        ├─cups-browsed───2*[{cups-browsed}]
+        ├─cupsd
+        ├─dbus-daemon
+     （省略）
+        ├─systemd─┬─(sd-pam)
+        │         ├─at-spi-bus-laun─┬─dbus-daemon
+        │         │                 └─3*[{at-spi-bus-laun}]
+        │         ├─at-spi2-registr───2*[{at-spi2-registr}]
+        │         ├─dbus-daemon
+        │         ├─dconf-service───2*[{dconf-service}]
+        │         ├─evolution-addre─┬─evolution-addre───5*[{evolution-addre}]
+        │         │                 └─4*[{evolution-addre}]
+        │         ├─evolution-calen─┬─evolution-calen───8*[{evolution-calen}]
+        │         │                 └─4*[{evolution-calen}]
+        │         ├─evolution-sourc───3*[{evolution-sourc}]
+        │         ├─gnome-shell-cal───5*[{gnome-shell-cal}]
+        │         ├─gnome-terminal-─┬─bash───pstree
+        │         │                 └─3*[{gnome-terminal-}]
+        │         ├─goa-daemon───3*[{goa-daemon}]
+        │         ├─goa-identity-se───3*[{goa-identity-se}]
+        │         ├─gvfs-afc-volume───3*[{gvfs-afc-volume}]
+        │         ├─gvfs-goa-volume───2*[{gvfs-goa-volume}]
+        │         ├─gvfs-gphoto2-vo───2*[{gvfs-gphoto2-vo}]
+        │         ├─gvfs-mtp-volume───2*[{gvfs-mtp-volume}]
+        │         ├─gvfs-udisks2-vo───2*[{gvfs-udisks2-vo}]
+        │         ├─gvfsd─┬─gvfsd-trash───2*[{gvfsd-trash}]
+        │         │       └─2*[{gvfsd}]
+        │         ├─gvfsd-fuse───5*[{gvfsd-fuse}]
+        │         ├─gvfsd-metadata───2*[{gvfsd-metadata}]
+        │         ├─ibus-portal───2*[{ibus-portal}]
+        │         ├─nautilus───3*[{nautilus}]
+        │         └─xdg-permission-───2*[{xdg-permission-}]
+     （省略）
 </code></pre></div>
-<code>コマンド</code> の実行結果の出力先を標準出力から <code>ファイル名</code> に変更します．ファイル書き込みの権限は <code>コマンド</code> に <code>sudo</code> を付与していた場合でも元のユーザー権限が適用されます．</p>
-</div>
-<h3 id="_12">パイプ<a class="headerlink" href="#_12" title="Permanent link">§</a></h3>
-<div class="admonition note">
-<p class="admonition-title">パイプ</p>
-<p><div class="highlight"><span class="filename">書式</span><pre><span></span><code>コマンド1 <span class="p">|</span> コマンド2 <span class="p">|</span> コマンド3
+<p>全てを記載すると長いので途中で省略した箇所がありますが，<code>systemd</code> → <code>systemd</code> → <code>gnome-terminal-</code> → <code>bash</code> → <code>pstree</code> という経路が確認できます．矢印の左側のプロセスが矢印の右側のプロセスを呼び出していると解釈してください．</p>
+<p>ここで次のようなコマンドを入力してみます．</p>
+<div class="highlight"><pre><span></span><code>pstree -p -s -U <span class="nv">$$</span> <span class="p">|</span> <span class="o">{</span> cat<span class="p">;</span> pstree -p -s -U <span class="nv">$$</span><span class="p">;</span> <span class="o">}</span>
 </code></pre></div>
-<code>コマンド1</code> の標準出力を <code>コマンド2</code> の標準入力へ繋げます．ふたつのコマンドだけでなく任意の数のコマンドを順次繋げていくことができます．これらのパイプを構成する各々のコマンドは全てカレントシェルから派生する独立したサブシェルで実行されます．</p>
-</div>
-<h3 id="_13">括弧<a class="headerlink" href="#_13" title="Permanent link">§</a></h3>
-<div class="admonition note">
-<p class="admonition-title">$()</p>
-<ul>
-<li>書式：<code>$(コマンド)</code></li>
-<li>意味：<code>コマンド</code> の実行結果を文字列として展開する</li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">${}</p>
-<ul>
-<li>書式：<code>${変数}</code></li>
-<li>意味：<code>変数</code> の値を文字列として展開する</li>
-</ul>
-</div>
-<h3 id="_14">クォーテーション<a class="headerlink" href="#_14" title="Permanent link">§</a></h3>
-<div class="admonition note">
-<p class="admonition-title">バッククォート</p>
-<ul>
-<li>バッククォートで囲まれた文字列をコマンドとして実行した結果を文字列として展開する</li>
-<li>バッククォートの中でバッククォートは利用できないので注意</li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">ダブルクォート</p>
-<p>ダブルクォートで囲まれた文字列のうち，<code>$</code>，バッククォート，バックスラッシュのみを解釈し，それ以外をエスケープした文字列を得る</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">シングルクォート</p>
-<p>シングルクォートで囲まれた文字列全てをエスケープした文字列を得る</p>
-</div>
-<h3 id="_15">条件分岐<a class="headerlink" href="#_15" title="Permanent link">§</a></h3>
-<div class="admonition note">
-<p class="admonition-title">AND</p>
-<p><div class="highlight"><span class="filename">書式</span><pre><span></span><code>コマンド1 <span class="o">&amp;&amp;</span> コマンド2
+<div class="highlight"><pre><span></span><code>systemd(1)───systemd(1597)───gnome-terminal-(21431)───bash(21441)─┬─bash(28077)───cat(28078)
+                                                                  └─pstree(28076)
+systemd(1)───systemd(1597)───gnome-terminal-(21431)───bash(21441)───bash(28077)───pstree(28079)
 </code></pre></div>
-コマンド1が成功した場合のみ，コマンド2を実行する</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">OR</p>
-<p><div class="highlight"><span class="filename">書式</span><pre><span></span><code>コマンド1 <span class="o">||</span> コマンド2
-</code></pre></div>
-コマンド1が失敗した場合のみ，コマンド2を実行する</p>
-</div>
+<h2 id="_6">色々あるコマンドラインシェル<a class="headerlink" href="#_6" title="Permanent link">§</a></h2>
+<h3 id="bourne-shell-sh">Bourne Shell (sh)<a class="headerlink" href="#bourne-shell-sh" title="Permanent link">§</a></h3>
+<h3 id="bash-bash">Bash (bash)<a class="headerlink" href="#bash-bash" title="Permanent link">§</a></h3>
 </article>
 </div>
 </div>
@@ -657,13 +516,13 @@
             </div>
 </div>
 </a>
-<a aria-label="Next: 権限" class="md-footer__link md-footer__link--next" href="../permission/" rel="next">
+<a aria-label="Next: コマンド操作" class="md-footer__link md-footer__link--next" href="../command/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              権限
+              コマンド操作
             </div>
 </div>
 <div class="md-footer__button md-icon">
