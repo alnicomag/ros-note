@@ -52,6 +52,6 @@ flowchart TB
 これを Rviz と呼ばれる 3D 可視化ツールによって表示させると以下のようになります．
 
 <figure markdown>
-  ![](FHiv0hoaAAUx_xf.jfif)
+  ![](urdf/FHiv0hoaAAUx_xf.jfif)
   <figcaption>Fig. 1 単一リンクのみを持つ URDF を RViz で可視化させた例</figcaption>
 </figure>

@@ -9,7 +9,7 @@ ls -l
 ```
 
 <figure markdown>
-  ![](ss_ros-merodic-permission.png)
+  ![](permission/ss_ros-merodic-permission.png)
   <figcaption>Fig. 1 ROS Melodic のインストールディレクトリにあるファイルの権限を確認してみる</figcaption>
 </figure>
 
