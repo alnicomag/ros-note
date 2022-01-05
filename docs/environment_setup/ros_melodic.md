@@ -49,7 +49,7 @@ deb [ option1=value1 option2=value2 ] uri suite [component1] [component2] [...]
 Ubuntu のコードネームは `lsb_release -sc` コマンドにより取得でき，今回は Ubuntu 18 上で実行しているので，`bionic` が得られます．
 
 <figure>
-    <img width="800" src="95b1a6ec-09b1-4e03-a473-d8b601c77c64.png"/>
+    <img width="800" src="ros_melodic/95b1a6ec-09b1-4e03-a473-d8b601c77c64.png"/>
 </figure>
 
 #### 参考にしたページ
@@ -329,5 +329,5 @@ roscore
 ```
 
 <figure>
-    <img width="800" src="eb7e4ef5-6e6d-4208-9376-1ad2d406d217.png"/>
+    <img width="800" src="ros_melodic/eb7e4ef5-6e6d-4208-9376-1ad2d406d217.png"/>
 </figure>

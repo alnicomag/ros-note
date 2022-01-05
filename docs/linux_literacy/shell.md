@@ -3,7 +3,7 @@
 GUI 環境の Ubuntu にログインした後，デフォルトでインストールされている「Terminal」という名前のアプリケーションを利用して作業を始めると思います．Mac OS であれば「iTerm」というターミナルソフトがインストールされています．これはターミナルソフトと呼ばれるものです．シェルとは違います．
 
 <figure markdown>
-  ![](ss_terminal.png)
+  ![](shell/ss_terminal.png)
   <figcaption>Fig. 1 アプリケーション「Terminal」の見た目</figcaption>
 </figure>
 
