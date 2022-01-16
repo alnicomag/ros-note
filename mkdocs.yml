@@ -122,9 +122,10 @@ nav:
     - environment_setup/index.md
     - Ubuntu 仮想マシン: environment_setup/ubuntu.md
     - ROS Melodic: environment_setup/ros_melodic.md
-  - ROSの基礎:
+  - ROS の基礎:
     - ros_basic/index.md
     - 全体像: ros_basic/outline.md
+    - ROS のコマンド: ros_basic/ros_command.md
   - 雑記:
     - memo/index.md
     - URDF: memo/urdf.md
