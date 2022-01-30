@@ -8,9 +8,9 @@
 <meta content="Sanada Tatsuya" name="author"/>
 <link href="https://alnicomag.github.io/ros-note/linux_literacy/command.html" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
+<meta content="mkdocs-1.2.3, mkdocs-material-8.1.9" name="generator"/>
 <title>コマンド操作 - ROS Note</title>
-<link href="../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/main.2b4465f4.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <meta content="#ffa724" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -118,7 +118,7 @@
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../ros_basic/index.html">
-        ROSの基礎
+        ROS の基礎
       </a>
 </li>
 <li class="md-tabs__item">
@@ -245,16 +245,21 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_8">
-    括弧
+    変数
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_9">
-    クォーテーション
+    括弧
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_10">
+    クォーテーション
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
     条件分岐
   </a>
 </li>
@@ -262,19 +267,49 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_11">
+<a class="md-nav__link" href="#_12">
     特殊なファイル
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_12">
+<a class="md-nav__link" href="#_13">
     よく使うコマンドたち
   </a>
 <nav aria-label="よく使うコマンドたち" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#export">
+    export
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#pstree">
     pstree
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+    :
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#unset">
+    unset
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test">
+    test
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#uname">
+    uname
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#printenv">
+    printenv
   </a>
 </li>
 </ul>
@@ -321,20 +356,25 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../ros_basic/index.html">ROSの基礎</a>
+<a href="../ros_basic/index.html">ROS の基礎</a>
 <label for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="ROSの基礎" class="md-nav" data-md-level="1">
+<nav aria-label="ROS の基礎" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
-          ROSの基礎
+          ROS の基礎
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../ros_basic/outline.html">
         全体像
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ros_basic/ros_command.html">
+        ROS のコマンド
       </a>
 </li>
 </ul>
@@ -445,16 +485,21 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_8">
-    括弧
+    変数
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_9">
-    クォーテーション
+    括弧
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_10">
+    クォーテーション
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
     条件分岐
   </a>
 </li>
@@ -462,19 +507,49 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_11">
+<a class="md-nav__link" href="#_12">
     特殊なファイル
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_12">
+<a class="md-nav__link" href="#_13">
     よく使うコマンドたち
   </a>
 <nav aria-label="よく使うコマンドたち" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#export">
+    export
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#pstree">
     pstree
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+    :
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#unset">
+    unset
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test">
+    test
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#uname">
+    uname
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#printenv">
+    printenv
   </a>
 </li>
 </ul>
@@ -593,7 +668,14 @@
 </code></pre></div>
 <code>コマンド1</code> の標準出力を <code>コマンド2</code> の標準入力へ繋げます．ふたつのコマンドだけでなく任意の数のコマンドを順次繋げていくことができます．パイプ後の各々のコマンドは全てカレントシェルから派生する独立したサブシェルで実行されます．</p>
 </div>
-<h3 id="_8">括弧<a class="headerlink" href="#_8" title="Permanent link">§</a></h3>
+<h3 id="_8">変数<a class="headerlink" href="#_8" title="Permanent link">§</a></h3>
+<div class="admonition note">
+<p class="admonition-title">シェル変数</p>
+<p><div class="highlight"><span class="filename">書式</span><pre><span></span><code><span class="nv">変数名</span><span class="o">=</span>値
+</code></pre></div>
+<code>変数名</code>という名前で値が<code>値</code>の変数を定義します．</p>
+</div>
+<h3 id="_9">括弧<a class="headerlink" href="#_9" title="Permanent link">§</a></h3>
 <div class="admonition note">
 <p class="admonition-title">$()</p>
 <p><div class="highlight"><span class="filename">書式</span><pre><span></span><code><span class="k">$(</span>コマンド<span class="k">)</span>
@@ -612,7 +694,7 @@
 </code></pre></div>
 丸括弧で囲まれた複数のコマンドをサブシェル内で実行します．</p>
 </div>
-<h3 id="_9">クォーテーション<a class="headerlink" href="#_9" title="Permanent link">§</a></h3>
+<h3 id="_10">クォーテーション<a class="headerlink" href="#_10" title="Permanent link">§</a></h3>
 <div class="admonition note">
 <p class="admonition-title">バッククォート</p>
 <p><div class="highlight"><span class="filename">書式</span><pre><span></span><code><span class="sb">`</span>コマンド<span class="sb">`</span>
@@ -627,7 +709,7 @@
 <p class="admonition-title">シングルクォート</p>
 <p>シングルクォートで囲まれた文字列全てをエスケープした文字列を得る</p>
 </div>
-<h3 id="_10">条件分岐<a class="headerlink" href="#_10" title="Permanent link">§</a></h3>
+<h3 id="_11">条件分岐<a class="headerlink" href="#_11" title="Permanent link">§</a></h3>
 <div class="admonition note">
 <p class="admonition-title">AND</p>
 <p><div class="highlight"><span class="filename">書式</span><pre><span></span><code>コマンド1 <span class="o">&amp;&amp;</span> コマンド2
@@ -640,9 +722,9 @@
 </code></pre></div>
 コマンド1が失敗した場合のみ，コマンド2を実行する</p>
 </div>
-<h2 id="_11">特殊なファイル<a class="headerlink" href="#_11" title="Permanent link">§</a></h2>
+<h2 id="_12">特殊なファイル<a class="headerlink" href="#_12" title="Permanent link">§</a></h2>
 <p>/dev/null</p>
-<h2 id="_12">よく使うコマンドたち<a class="headerlink" href="#_12" title="Permanent link">§</a></h2>
+<h2 id="_13">よく使うコマンドたち<a class="headerlink" href="#_13" title="Permanent link">§</a></h2>
 <p>ls</p>
 <p>cd</p>
 <p>mkdir</p>
@@ -655,8 +737,16 @@
 <p>touch</p>
 <p>tee</p>
 <p>pwd</p>
+<p>bash [opption] [file]</p>
+<p>bash -c string</p>
+<p>dirname</p>
+<h3 id="export">export<a class="headerlink" href="#export" title="Permanent link">§</a></h3>
+<div class="highlight"><pre><span></span><code>export [option] [変数名]
+</code></pre></div>
 <h3 id="pstree">pstree<a class="headerlink" href="#pstree" title="Permanent link">§</a></h3>
-<p><code>pstree [option] [プロセスID or ユーザ名]</code></p>
+<div class="highlight"><pre><span></span><code>pstree [option] [プロセスID or ユーザ名]
+</code></pre></div>
+<p>標準出力にプロセスツリーを出力する．</p>
 <table>
 <thead>
 <tr>
@@ -679,9 +769,114 @@
 </tr>
 </tbody>
 </table>
-<p>bash [opption] [file]</p>
-<p>bash -c string</p>
-<p>dirname</p>
+<h3 id="_14">:<a class="headerlink" href="#_14" title="Permanent link">§</a></h3>
+<div class="highlight"><pre><span></span><code>: [param]
+</code></pre></div>
+<p><code>param</code> を評価するが，何もしない．</p>
+<h3 id="unset">unset<a class="headerlink" href="#unset" title="Permanent link">§</a></h3>
+<div class="highlight"><pre><span></span><code>unset [option] [name ...]
+</code></pre></div>
+<p>変数を削除する．</p>
+<div class="highlight"><pre><span></span><code>Unset values and attributes of shell variables and functions.
+For each NAME, remove the corresponding variable or function.
+
+Options:
+    -f  treat each NAME as a shell function
+    -v  treat each NAME as a shell variable
+    -n  treat each NAME as a name reference and unset the variable itself rather than the variable it references
+
+Without options, unset first tries to unset a variable, and if that fails, tries to unset a function.
+
+Some variables cannot be unset; also see `readonly'.
+
+Exit Status: Returns success unless an invalid option is given or a NAME is read-only.
+</code></pre></div>
+<h3 id="test">test<a class="headerlink" href="#test" title="Permanent link">§</a></h3>
+<div class="highlight"><pre><span></span><code>test [option] [param]
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th><code>[option]</code></th>
+<th><code>[param]</code></th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-z</code></td>
+<td>文字列</td>
+<td>文字列の長さが0の時，True．</td>
+</tr>
+<tr>
+<td><code>-f</code></td>
+<td>ファイル</td>
+<td>ファイルが存在する時，True．</td>
+</tr>
+<tr>
+<td><code>-d</code></td>
+<td>ディレクトリ</td>
+<td>ディレクトリが存在する時，True．</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>test [param] [option] [param]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[ [option] [param] ]
+</code></pre></div>
+<h3 id="uname">uname<a class="headerlink" href="#uname" title="Permanent link">§</a></h3>
+<div class="highlight"><pre><span></span><code>uname [option]
+</code></pre></div>
+<p>標準出力にシステム情報を出力する．</p>
+<table>
+<thead>
+<tr>
+<th><code>[option]</code></th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-a</code></td>
+<td>全情報を出力する</td>
+</tr>
+<tr>
+<td><code>-s</code></td>
+<td>カーネル名を出力する</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><span class="filename">option</span><pre><span></span><code>-a, --all                print all information, in the following order, except omit -p and -i if unknown:
+-s, --kernel-name        print the kernel name
+-n, --nodename           print the network node hostname
+-r, --kernel-release     print the kernel release
+-v, --kernel-version     print the kernel version
+-m, --machine            print the machine hardware name
+-p, --processor          print the processor type (non-portable)
+-i, --hardware-platform  print the hardware platform (non-portable)
+-o, --operating-system   print the operating system
+    --help               display this help and exit
+    --version            output version information and exit
+</code></pre></div>
+<h3 id="printenv">printenv<a class="headerlink" href="#printenv" title="Permanent link">§</a></h3>
+<div class="highlight"><pre><span></span><code>printenv [option] [variable]
+</code></pre></div>
+<p>指定された環境変数の値を標準出力に出力する．指定のない場合は全ての環境変数の値を出力する．</p>
+<table>
+<thead>
+<tr>
+<th><code>[option]</code></th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-0</code></td>
+<td>改行をしない</td>
+</tr>
+</tbody>
+</table>
+<p><code>export -p</code> でも似たような結果が得られるが，書式が少し違う．</p>
 </article>
 </div>
 </div>
@@ -723,7 +918,7 @@
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
 <div class="md-copyright__highlight">
-      Copyright © 2021 - Sanada Tatsuya
+      Copyright © 2021-2022 Sanada Tatsuya
     </div>
   
   
@@ -744,8 +939,8 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "navigation.indexes", "content.code.annotate"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.361d90f1.min.js"}</script>
-<script src="../assets/javascripts/bundle.289a2a4b.min.js"></script>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "navigation.indexes", "content.code.annotate"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+<script src="../assets/javascripts/bundle.960e086b.min.js"></script>
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>

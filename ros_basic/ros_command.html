@@ -6,19 +6,19 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Sanada Tatsuya" name="author"/>
-<link href="https://alnicomag.github.io/ros-note/index.html" rel="canonical"/>
-<link href="assets/images/favicon.png" rel="icon"/>
+<link href="https://alnicomag.github.io/ros-note/ros_basic/ros_command.html" rel="canonical"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.2.3, mkdocs-material-8.1.9" name="generator"/>
-<title>ROS Note</title>
-<link href="assets/stylesheets/main.2b4465f4.min.css" rel="stylesheet"/>
-<link href="assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
+<title>ROS のコマンド - ROS Note</title>
+<link href="../assets/stylesheets/main.2b4465f4.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <meta content="#ffa724" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Zen+Maru+Gothic:300,400,400i,700%7CSource+Code+Pro&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Zen Maru Gothic";--md-code-font:"Source Code Pro"}</style>
-<link href="stylesheets/extra.css" rel="stylesheet"/>
+<link href="../stylesheets/extra.css" rel="stylesheet"/>
 <link href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" rel="stylesheet"/>
-<script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-72RDHRKN14"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-72RDHRKN14",{page_path:e.pathname})})})</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-72RDHRKN14"></script>
 </head>
@@ -27,15 +27,12 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#ros">
-          コンテンツにスキップ
-        </a>
 </div>
 <div data-md-component="announce">
 </div>
 <header class="md-header md-header--lifted" data-md-component="header">
 <nav aria-label="ヘッダー" class="md-header__inner md-grid">
-<a aria-label="ROS Note" class="md-header__button md-logo" data-md-component="logo" href="index.html" title="ROS Note">
+<a aria-label="ROS Note" class="md-header__button md-logo" data-md-component="logo" href="../index.html" title="ROS Note">
 <svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M32 224h32v192H32a31.962 31.962 0 0 1-32-32V256a31.962 31.962 0 0 1 32-32zm512-48v272a64.063 64.063 0 0 1-64 64H160a64.063 64.063 0 0 1-64-64V176a79.974 79.974 0 0 1 80-80h112V32a32 32 0 0 1 64 0v64h112a79.974 79.974 0 0 1 80 80zm-280 80a40 40 0 1 0-40 40 39.997 39.997 0 0 0 40-40zm-8 128h-64v32h64zm96 0h-64v32h64zm104-128a40 40 0 1 0-40 40 39.997 39.997 0 0 0 40-40zm-8 128h-64v32h64zm192-128v128a31.962 31.962 0 0 1-32 32h-32V224h32a31.962 31.962 0 0 1 32 32z"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -51,7 +48,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Home
+              ROS のコマンド
             
           </span>
 </div>
@@ -102,32 +99,32 @@
 <div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="index.html">
+<a class="md-tabs__link" href="../index.html">
       Home
     </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="linux_literacy/index.html">
+<a class="md-tabs__link" href="../linux_literacy/index.html">
         Linux
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="environment_setup/index.html">
+<a class="md-tabs__link" href="../environment_setup/index.html">
         環境構築
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="ros_basic/index.html">
+<a class="md-tabs__link md-tabs__link--active" href="index.html">
         ROS の基礎
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="memo/index.html">
+<a class="md-tabs__link" href="../memo/index.html">
         雑記
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="reference/index.html">
+<a class="md-tabs__link" href="../reference/index.html">
         資料集
       </a>
 </li>
@@ -138,12 +135,12 @@
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden="">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="ナビゲーション" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="ROS Note" class="md-nav__button md-logo" data-md-component="logo" href="index.html" title="ROS Note">
+<a aria-label="ROS Note" class="md-nav__button md-logo" data-md-component="logo" href="../index.html" title="ROS Note">
 <svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M32 224h32v192H32a31.962 31.962 0 0 1-32-32V256a31.962 31.962 0 0 1 32-32zm512-48v272a64.063 64.063 0 0 1-64 64H160a64.063 64.063 0 0 1-64-64V176a79.974 79.974 0 0 1 80-80h112V32a32 32 0 0 1 64 0v64h112a79.974 79.974 0 0 1 80 80zm-280 80a40 40 0 1 0-40 40 39.997 39.997 0 0 0 40-40zm-8 128h-64v32h64zm96 0h-64v32h64zm104-128a40 40 0 1 0-40 40 39.997 39.997 0 0 0 40-40zm-8 128h-64v32h64zm192-128v128a31.962 31.962 0 0 1-32 32h-32V224h32a31.962 31.962 0 0 1 32 32z"></path></svg>
 </a>
     ROS Note
@@ -159,57 +156,15 @@
 </a>
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Home
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="index.html">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../index.html">
         Home
       </a>
-<nav aria-label="目次" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ros">
-    ROS とは
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ros-ros2">
-    ROS と ROS2
-  </a>
-<nav aria-label="ROS と ROS2" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    どちらを選択すればいいのか
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ros_1">
-    ROS のディストリビューション
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ros2">
-    ROS2 のディストリビューション
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="linux_literacy/index.html">Linux</a>
+<a href="../linux_literacy/index.html">Linux</a>
 <label for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -221,17 +176,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="linux_literacy/shell.html">
+<a class="md-nav__link" href="../linux_literacy/shell.html">
         シェルとは
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="linux_literacy/command.html">
+<a class="md-nav__link" href="../linux_literacy/command.html">
         コマンド操作
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="linux_literacy/permission.html">
+<a class="md-nav__link" href="../linux_literacy/permission.html">
         パーミッション
       </a>
 </li>
@@ -241,7 +196,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="environment_setup/index.html">環境構築</a>
+<a href="../environment_setup/index.html">環境構築</a>
 <label for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -253,22 +208,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="environment_setup/ubuntu.html">
+<a class="md-nav__link" href="../environment_setup/ubuntu.html">
         Ubuntu 仮想マシン
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="environment_setup/ros_melodic.html">
+<a class="md-nav__link" href="../environment_setup/ros_melodic.html">
         ROS Melodic
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="ros_basic/index.html">ROS の基礎</a>
+<a href="index.html">ROS の基礎</a>
 <label for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -280,12 +235,13 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="ros_basic/outline.html">
+<a class="md-nav__link" href="outline.html">
         全体像
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="ros_basic/ros_command.html">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="ros_command.html">
         ROS のコマンド
       </a>
 </li>
@@ -295,7 +251,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="memo/index.html">雑記</a>
+<a href="../memo/index.html">雑記</a>
 <label for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -307,7 +263,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="memo/urdf.html">
+<a class="md-nav__link" href="../memo/urdf.html">
         URDF
       </a>
 </li>
@@ -317,7 +273,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="reference/index.html">資料集</a>
+<a href="../reference/index.html">資料集</a>
 <label for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -329,7 +285,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="reference/books.html">
+<a class="md-nav__link" href="../reference/books.html">
         書籍
       </a>
 </li>
@@ -341,111 +297,10 @@
 </div>
 </div>
 </div>
-<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="目次" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ros">
-    ROS とは
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ros-ros2">
-    ROS と ROS2
-  </a>
-<nav aria-label="ROS と ROS2" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    どちらを選択すればいいのか
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ros_1">
-    ROS のディストリビューション
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ros2">
-    ROS2 のディストリビューション
-  </a>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Home</h1>
-<p>ROS を分かりたい．それだけ．</p>
-<h2 id="ros">ROS とは<a class="headerlink" href="#ros" title="Permanent link">§</a></h2>
-<p>ROS は正確に表記すると Robot Operating System となります．長いので普段は ROS と呼びます．名前に Operating System と付いていますが Windows や Mac OS のような OS とは異なり，ロボットのシステム開発を便利に進めるためのミドルウェアやツール群です．</p>
-<p>「5分でワカル!? ROSとはなにか」という分かりやすい資料が ROS Japan Users Group により作成されていますので，是非一読することをお勧めします．</p>
-<div style="text-align:center;">
-<iframe height="500" src="https://docs.google.com/presentation/d/1BZU3nFDiSrUU7wAMpqgY4kU6-65wxzvfHVRZigsHlDI/embed" width="800"></iframe>
-<br/>
-<span style="font-style:italic;color:navy">ROS Japan Users Group による「5分でワカル!? ROSとはなにか」 / CC BY-SA</span>
-</div>
-<h2 id="ros-ros2">ROS と ROS2<a class="headerlink" href="#ros-ros2" title="Permanent link">§</a></h2>
-<p>ROS は2007年11月に Willow Garage Inc. が Switchyard プロジェクトを引き継ぐ形で開発がスタートし，2010年1月22日に ROS の最初のディストリビューションである ROS 1.0 がリリースされました．2012年には Open Source Robotics Foundation, Inc. が設立され，ROS の開発主導はこの財団に引き継がれました．その後も現在に至るまで継続的に開発が進められています．</p>
-<p>しかし，目的を同じくして新しくこれを作り直す取り組みもあり，これは ROS2 と呼ばれています．ソフトウェアとしての互換性は無く完全に別物として開発されていますが，機能的に同じものは同じ名前（同じ名前の後ろに2を付けたもの）になるようにするなど，使用する上での慣習や呼称などはなるべく引き継がれるように作られています．</p>
-<p>ROS2 の開発が進んできていることもあり，ROS は2025年5月に EOL を迎えることが決まっています．</p>
-<h3 id="_1">どちらを選択すればいいのか<a class="headerlink" href="#_1" title="Permanent link">§</a></h3>
-<p>頼れる資料の数や公式ドキュメントの充実具合を考えると，ロボットのソフトウェア開発をこれから始めようという人は ROS の方がお勧めできると思います．</p>
-<p>ただし，要求されるパフォーマンスが高く，ソフトウェア開発に多くの時間的コストを割け，ROS に頼らずともロボットのソフトウェアを日頃から開発しているというような場合は ROS2 を選択すれば良いでしょう．</p>
-<p>どちらにせよ数年後には ROS2 に移行せざるを得ないということは覚えておきましょう．</p>
-<h2 id="ros_1">ROS のディストリビューション<a class="headerlink" href="#ros_1" title="Permanent link">§</a></h2>
-<p>ROS のディストリビューション名は ROS 1.0 の後，Box Turtle，C Turtle と全て亀を連想させるような単語を選びながら頭文字がアルファベット順になるように命名されてきました．最も新しいディストリビューションは Noetic Ninjemys でこれが ROS としての最後のディストリビューションになります．</p>
-<table>
-<thead>
-<tr>
-<th align="center">ディストリビューション</th>
-<th align="center">リリース</th>
-<th align="center">サポート期限</th>
-<th align="center">プラットフォーム</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Noetic Ninjemys</td>
-<td align="center">2020/5/23</td>
-<td align="center">2025/5</td>
-<td align="center">Ubuntu 20.04</td>
-</tr>
-<tr>
-<td align="center">Melodic Morenia</td>
-<td align="center">2018/5/23</td>
-<td align="center">2023/5</td>
-<td align="center">Ubuntu 18.04<br/>Ubuntu 17.10</td>
-</tr>
-<tr>
-<td align="center">Lunar Loggerhead</td>
-<td align="center">2017/5/23</td>
-<td align="center">2019/5</td>
-<td align="center">Ubuntu 17.04<br/>Ubuntu 16.10<br/>Ubuntu 16.04</td>
-</tr>
-<tr>
-<td align="center">Kinetic Kame</td>
-<td align="center">2016/5/23</td>
-<td align="center">2021/5</td>
-<td align="center">Ubuntu 16.04<br/>Ubuntu 15.10</td>
-</tr>
-</tbody>
-</table>
-<p>上の表は ROS のディストリビューションを新しいものから4つ抜粋してリリース日とサポート期限，それらが動作する Linux ディストリビューションを一覧にしたものです．Linux ディストリビューション自体にもサポート期限が定められているため，Linux ディストリビューションの EOL が実質的に ROS のディストリビューションの EOL となってしまいます．そして，実際にそのような期限の設定になっています．</p>
-<p>従って，コンピュータのサポートする OS とその OS で動かせる ROS のディストリビューションを EOL も考慮しつつ選定していく必要があります．</p>
-<h2 id="ros2">ROS2 のディストリビューション<a class="headerlink" href="#ros2" title="Permanent link">§</a></h2>
-<p>（準備中）</p>
+<h1>ROS のコマンド</h1>
+<p>roscore</p>
 </article>
 </div>
 </div>
@@ -456,13 +311,26 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="フッター" class="md-footer__inner md-grid">
-<a aria-label="次: Linux" class="md-footer__link md-footer__link--next" href="linux_literacy/index.html" rel="next">
+<a aria-label="前: 全体像" class="md-footer__link md-footer__link--prev" href="outline.html" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                前
+              </span>
+              全体像
+            </div>
+</div>
+</a>
+<a aria-label="次: 雑記" class="md-footer__link md-footer__link--next" href="../memo/index.html" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 次
               </span>
-              Linux
+              雑記
             </div>
 </div>
 <div class="md-footer__button md-icon">
@@ -495,8 +363,8 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "navigation.indexes", "content.code.annotate"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.22074ed6.min.js"}</script>
-<script src="assets/javascripts/bundle.960e086b.min.js"></script>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "navigation.indexes", "content.code.annotate"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+<script src="../assets/javascripts/bundle.960e086b.min.js"></script>
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>

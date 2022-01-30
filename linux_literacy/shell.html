@@ -8,9 +8,9 @@
 <meta content="Sanada Tatsuya" name="author"/>
 <link href="https://alnicomag.github.io/ros-note/linux_literacy/shell.html" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
+<meta content="mkdocs-1.2.3, mkdocs-material-8.1.9" name="generator"/>
 <title>シェルとは - ROS Note</title>
-<link href="../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/main.2b4465f4.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <meta content="#ffa724" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -118,7 +118,7 @@
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../ros_basic/index.html">
-        ROSの基礎
+        ROS の基礎
       </a>
 </li>
 <li class="md-tabs__item">
@@ -200,9 +200,9 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    コマンドラインシェルの分類
+    コマンドラインシェルの概要
   </a>
-<nav aria-label="コマンドラインシェルの分類" class="md-nav">
+<nav aria-label="コマンドラインシェルの概要" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
@@ -219,11 +219,21 @@
     カレントシェルとサブシェル
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    シェル変数と環境変数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+    シェルの初期化処理
+  </a>
+</li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
+<a class="md-nav__link" href="#_8">
     色々あるコマンドラインシェル
   </a>
 <nav aria-label="色々あるコマンドラインシェル" class="md-nav">
@@ -234,8 +244,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#bash-bash">
-    Bash (bash)
+<a class="md-nav__link" href="#bourne-again-shell-bash">
+    Bourne Again Shell (bash)
   </a>
 </li>
 </ul>
@@ -287,20 +297,25 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../ros_basic/index.html">ROSの基礎</a>
+<a href="../ros_basic/index.html">ROS の基礎</a>
 <label for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="ROSの基礎" class="md-nav" data-md-level="1">
+<nav aria-label="ROS の基礎" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
-          ROSの基礎
+          ROS の基礎
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../ros_basic/outline.html">
         全体像
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ros_basic/ros_command.html">
+        ROS のコマンド
       </a>
 </li>
 </ul>
@@ -371,9 +386,9 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    コマンドラインシェルの分類
+    コマンドラインシェルの概要
   </a>
-<nav aria-label="コマンドラインシェルの分類" class="md-nav">
+<nav aria-label="コマンドラインシェルの概要" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
@@ -390,11 +405,21 @@
     カレントシェルとサブシェル
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    シェル変数と環境変数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+    シェルの初期化処理
+  </a>
+</li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
+<a class="md-nav__link" href="#_8">
     色々あるコマンドラインシェル
   </a>
 <nav aria-label="色々あるコマンドラインシェル" class="md-nav">
@@ -405,8 +430,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#bash-bash">
-    Bash (bash)
+<a class="md-nav__link" href="#bourne-again-shell-bash">
+    Bourne Again Shell (bash)
   </a>
 </li>
 </ul>
@@ -429,12 +454,22 @@
 </figure>
 <p>このターミナルソフトで様々なコマンド打ち込むことでシェルに対して命令を出すことができます．シェルはこの命令を解釈してカーネルに伝達することで実際の処理が行われます．つまり，シェルは画面上に見えているものを指すわけではなく，その画面を通して動作しているプログラムということになります．</p>
 <p>ターミナルソフトにおいて CUI ベースの操作体系をとるこのようなシェルを特にコマンドラインシェルと呼びます．</p>
-<h2 id="_2">コマンドラインシェルの分類<a class="headerlink" href="#_2" title="Permanent link">§</a></h2>
+<h2 id="_2">コマンドラインシェルの概要<a class="headerlink" href="#_2" title="Permanent link">§</a></h2>
 <p>シェルはターミナルソフト上で見えているものではなく，プログラムです．ただ1つだけ起動するという訳ではなく，複数起動することもあります．呼び出されれば起動し，処理が終われば終了します．あくまでもプログラムのひとつなので，その他の一般的なプログラムの挙動と同じ概念で考えることができます．</p>
-<p>ただ，シェルがどのような条件で起動したのかによって呼び分けることがあります．その理由は起動のタイミングによって，ユーザーが指示を出す前に既に読み込まれている変数の種類に違いがあるからです．この変数には例えば「PATH」のようなプログラムを探しに行くディレクトリの情報などがあり，このような変数の総称を環境変数と呼びます．</p>
+<p>ただ，シェルがどのような条件で起動したのかによって呼び分けます．その理由は起動のタイミングによって，シェルが起動した直後に実行される初期化処理に違いがあるからです．この違いにより定義されている変数に違いが発生します．</p>
+<p>コマンドラインシェルにも様々なものがありますが，ここでは基本的に bash を念頭において話を進めます．</p>
 <h3 id="_3">ログインシェルと非ログインシェル<a class="headerlink" href="#_3" title="Permanent link">§</a></h3>
 <p>コンピュータのあるユーザに対してログインしたその時に起動されるシェルはログインシェルと呼ばれます．例えば SSH 接続を利用してリモートマシンにログインした時です．</p>
 <h3 id="_4">対話的シェルと非対話的シェル<a class="headerlink" href="#_4" title="Permanent link">§</a></h3>
+<p>対話的シェルの例</p>
+<ul>
+<li>コマンド入力を待っている bash</li>
+<li><code>-i</code> オプション付きで実行される bash</li>
+</ul>
+<p>非対話的シェルの例</p>
+<ul>
+<li><code>-c</code> オプション付きで実行される bash</li>
+</ul>
 <h3 id="_5">カレントシェルとサブシェル<a class="headerlink" href="#_5" title="Permanent link">§</a></h3>
 <p>シェルはプログラムの一種なので，シェルが起動した時，その実行中のプログラムは OS からはひとつのプロセスとして認識されます．起動しているプロセスは <code>pstree</code> というコマンドで確認できます．その結果を以下に示します．</p>
 <div class="highlight"><pre><span></span><code>systemd─┬─ModemManager───2*[{ModemManager}]
@@ -486,13 +521,45 @@
 <p>ここで次のようなコマンドを入力してみます．</p>
 <div class="highlight"><pre><span></span><code>pstree -p -s -U <span class="nv">$$</span> <span class="p">|</span> <span class="o">{</span> cat<span class="p">;</span> pstree -p -s -U <span class="nv">$$</span><span class="p">;</span> <span class="o">}</span>
 </code></pre></div>
+<p>すると以下のような結果がターミナルに表示されました．当然プロセス番号などは実行環境と実行タイミングに依存します．</p>
 <div class="highlight"><pre><span></span><code>systemd(1)───systemd(1597)───gnome-terminal-(21431)───bash(21441)─┬─bash(28077)───cat(28078)
                                                                   └─pstree(28076)
 systemd(1)───systemd(1597)───gnome-terminal-(21431)───bash(21441)───bash(28077)───pstree(28079)
 </code></pre></div>
-<h2 id="_6">色々あるコマンドラインシェル<a class="headerlink" href="#_6" title="Permanent link">§</a></h2>
+<p>このシェルスクリプトはパイプの前後でそれぞれ <code>pstree</code> を実行し，その2つの結果を1つの文字列に結合して出力するというものです．この時，パイプの前の <code>pstree</code> はプロセス番号 21441 の bash から実行されているのに対して，パイプの後の <code>pstree</code> はプロセス番号 21441 の bash から呼び出されたプロセス番号 28077 の bash から実行されていることが分かります．このような呼び出し元のシェルと呼び出された先のシェルとの関係性を表す方法として，呼び出された先のシェルを呼び出し元のシェルのサブシェルと呼ぶことができます．また，作業中の対話的シェルのことなどを新しく呼び出されたサブシェルではないという意味でカレントシェルと呼ぶことができます．</p>
+<h3 id="_6">シェル変数と環境変数<a class="headerlink" href="#_6" title="Permanent link">§</a></h3>
+<p>シェルにおける変数は「シェル変数」と「環境変数」の2種類に分けられます．どちらの変数もスコープは自身のプロセス内のみです．シェル変数はそのプロセス外へと影響を及ぼすことはありませんが，環境変数は子プロセス（サブシェル）へと継承されます．これは自身のプロセスが新しい子プロセス（サブシェル）を呼び出した時に，その初期化処理として，自身の環境変数と同じものがサブシェルの環境変数として新たに定義されることを意味します．参照ではないため子プロセス内で環境変数を変更した場合でも，親プロセスの環境変数の値は変更されません．</p>
+<p>シェル変数と環境変数は慣例として全て大文字を用いて命名します．</p>
+<p>通常の変数定義の書式ではシェル変数として変数を定義することができます．これを <code>export</code> コマンド用いて環境変数へと格上げしたり，逆にシェル変数へと格下げすることができます．</p>
+<h3 id="_7">シェルの初期化処理<a class="headerlink" href="#_7" title="Permanent link">§</a></h3>
+<p>シェルが起動した時，ログインシェルかどうかや対話的シェルかどうかに合わせて，決まった順番で初期化処理が記述されたシェルスクリプトが呼び出されます．</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ログイン</th>
+<th>非ログイン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>対話的</td>
+<td><code>~/.bash_profile</code><br/><code>~/.bash_login</code><br/><code>~/.profile</code></td>
+<td><code>~/.bashrc</code></td>
+</tr>
+<tr>
+<td>非対話的</td>
+<td><code>~/.bash_profile</code><br/><code>~/.bash_login</code><br/><code>~/.profile</code></td>
+<td><code>$BASH_ENV</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>~/.bash_profile</code></p>
+<p><code>~/.profile</code></p>
+<p><code>~/.bashrc</code></p>
+<h2 id="_8">色々あるコマンドラインシェル<a class="headerlink" href="#_8" title="Permanent link">§</a></h2>
 <h3 id="bourne-shell-sh">Bourne Shell (sh)<a class="headerlink" href="#bourne-shell-sh" title="Permanent link">§</a></h3>
-<h3 id="bash-bash">Bash (bash)<a class="headerlink" href="#bash-bash" title="Permanent link">§</a></h3>
+<h3 id="bourne-again-shell-bash">Bourne Again Shell (bash)<a class="headerlink" href="#bourne-again-shell-bash" title="Permanent link">§</a></h3>
 </article>
 </div>
 </div>
@@ -534,7 +601,7 @@ systemd(1)───systemd(1597)───gnome-terminal-(21431)───bash(214
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
 <div class="md-copyright__highlight">
-      Copyright © 2021 - Sanada Tatsuya
+      Copyright © 2021-2022 Sanada Tatsuya
     </div>
   
   
@@ -555,8 +622,8 @@ systemd(1)───systemd(1597)───gnome-terminal-(21431)───bash(214
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "navigation.indexes", "content.code.annotate"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.361d90f1.min.js"}</script>
-<script src="../assets/javascripts/bundle.289a2a4b.min.js"></script>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "navigation.indexes", "content.code.annotate"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+<script src="../assets/javascripts/bundle.960e086b.min.js"></script>
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>

@@ -2,72 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://alnicomag.github.io/ros-note/index.html</loc>
-         <lastmod>2022-01-05</lastmod>
+         <lastmod>2022-01-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alnicomag.github.io/ros-note/environment_setup/index.html</loc>
-         <lastmod>2022-01-05</lastmod>
+         <lastmod>2022-01-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alnicomag.github.io/ros-note/environment_setup/ros_melodic.html</loc>
-         <lastmod>2022-01-05</lastmod>
+         <lastmod>2022-01-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alnicomag.github.io/ros-note/environment_setup/ubuntu.html</loc>
-         <lastmod>2022-01-05</lastmod>
+         <lastmod>2022-01-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alnicomag.github.io/ros-note/linux_literacy/index.html</loc>
-         <lastmod>2022-01-05</lastmod>
+         <lastmod>2022-01-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alnicomag.github.io/ros-note/linux_literacy/command.html</loc>
-         <lastmod>2022-01-05</lastmod>
+         <lastmod>2022-01-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alnicomag.github.io/ros-note/linux_literacy/permission.html</loc>
-         <lastmod>2022-01-05</lastmod>
+         <lastmod>2022-01-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alnicomag.github.io/ros-note/linux_literacy/shell.html</loc>
-         <lastmod>2022-01-05</lastmod>
+         <lastmod>2022-01-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alnicomag.github.io/ros-note/memo/index.html</loc>
-         <lastmod>2022-01-05</lastmod>
+         <lastmod>2022-01-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alnicomag.github.io/ros-note/memo/urdf.html</loc>
-         <lastmod>2022-01-05</lastmod>
+         <lastmod>2022-01-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alnicomag.github.io/ros-note/reference/index.html</loc>
-         <lastmod>2022-01-05</lastmod>
+         <lastmod>2022-01-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alnicomag.github.io/ros-note/reference/books.html</loc>
-         <lastmod>2022-01-05</lastmod>
+         <lastmod>2022-01-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alnicomag.github.io/ros-note/ros_basic/index.html</loc>
-         <lastmod>2022-01-05</lastmod>
+         <lastmod>2022-01-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alnicomag.github.io/ros-note/ros_basic/outline.html</loc>
-         <lastmod>2022-01-05</lastmod>
+         <lastmod>2022-01-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://alnicomag.github.io/ros-note/ros_basic/ros_command.html</loc>
+         <lastmod>2022-01-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
