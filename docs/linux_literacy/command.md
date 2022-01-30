@@ -59,6 +59,14 @@
     ```
     `コマンド1` の標準出力を `コマンド2` の標準入力へ繋げます．ふたつのコマンドだけでなく任意の数のコマンドを順次繋げていくことができます．パイプ後の各々のコマンドは全てカレントシェルから派生する独立したサブシェルで実行されます．
 
+### 変数
+
+!!! note "シェル変数"
+    ``` bash title="書式"
+    変数名=値
+    ```
+    `変数名`という名前で値が`値`の変数を定義します．
+
 ### 括弧
 
 !!! note "$()"
@@ -137,9 +145,23 @@ tee
 
 pwd
 
-### pstree
+bash [opption] [file]
 
-`pstree [option] [プロセスID or ユーザ名]`
+bash -c string
+
+dirname
+
+### export
+```
+export [option] [変数名]
+```
+
+### pstree
+```
+pstree [option] [プロセスID or ユーザ名]
+```
+
+標準出力にプロセスツリーを出力する．
 
 | オプション | 意味 |
 | --- | --- |
@@ -147,8 +169,92 @@ pwd
 | `-s` | プロセス ID が指定されている場合，指定したプロセスの親を表示する |
 | `-U` | 罫線に UTF-8 文字を利用する |
 
-bash [opption] [file]
+### :
+```
+: [param]
+```
 
-bash -c string
+`param` を評価するが，何もしない．
 
-dirname
+### unset
+```
+unset [option] [name ...]
+```
+
+変数を削除する．
+
+```
+Unset values and attributes of shell variables and functions.
+For each NAME, remove the corresponding variable or function.
+    
+Options:
+    -f	treat each NAME as a shell function
+    -v	treat each NAME as a shell variable
+    -n	treat each NAME as a name reference and unset the variable itself rather than the variable it references
+
+Without options, unset first tries to unset a variable, and if that fails, tries to unset a function.
+
+Some variables cannot be unset; also see `readonly'.
+
+Exit Status: Returns success unless an invalid option is given or a NAME is read-only.
+```
+
+
+### test
+```
+test [option] [param]
+```
+
+| `[option]` | `[param]` | 意味 |
+| --- | --- | --- |
+| `-z` | 文字列 | 文字列の長さが0の時，True． |
+| `-f` | ファイル | ファイルが存在する時，True． |
+| `-d` | ディレクトリ | ディレクトリが存在する時，True． |
+
+```
+test [param] [option] [param]
+```
+
+```
+[ [option] [param] ]
+```
+
+### uname
+```
+uname [option]
+```
+
+標準出力にシステム情報を出力する．
+
+| `[option]` | 意味 |
+| --- | --- |
+| `-a` | 全情報を出力する |
+| `-s` | カーネル名を出力する |
+
+
+``` title="option"
+-a, --all                print all information, in the following order, except omit -p and -i if unknown:
+-s, --kernel-name        print the kernel name
+-n, --nodename           print the network node hostname
+-r, --kernel-release     print the kernel release
+-v, --kernel-version     print the kernel version
+-m, --machine            print the machine hardware name
+-p, --processor          print the processor type (non-portable)
+-i, --hardware-platform  print the hardware platform (non-portable)
+-o, --operating-system   print the operating system
+    --help               display this help and exit
+    --version            output version information and exit
+```
+
+### printenv
+```
+printenv [option] [variable]
+```
+
+指定された環境変数の値を標準出力に出力する．指定のない場合は全ての環境変数の値を出力する．
+
+| `[option]` | 意味 |
+| --- | --- |
+| `-0` | 改行をしない |
+
+`export -p` でも似たような結果が得られるが，書式が少し違う．

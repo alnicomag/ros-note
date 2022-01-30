@@ -3,7 +3,7 @@ site_name: ROS Note
 site_url: https://alnicomag.github.io/ros-note/
 site_author: Sanada Tatsuya
 site_description: ""
-copyright: Copyright &copy; 2021 - Sanada Tatsuya
+copyright: Copyright &copy; 2021-2022 Sanada Tatsuya
 
 # Repository
 repo_name: alnicomag/ros-note
@@ -103,6 +103,7 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_div_format
   - pymdownx.keys
+  - pymdownx.mark
   - footnotes
   - attr_list
   - md_in_html
@@ -121,9 +122,10 @@ nav:
     - environment_setup/index.md
     - Ubuntu 仮想マシン: environment_setup/ubuntu.md
     - ROS Melodic: environment_setup/ros_melodic.md
-  - ROSの基礎:
+  - ROS の基礎:
     - ros_basic/index.md
     - 全体像: ros_basic/outline.md
+    - ROS のコマンド: ros_basic/ros_command.md
   - 雑記:
     - memo/index.md
     - URDF: memo/urdf.md

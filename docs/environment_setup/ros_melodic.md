@@ -150,9 +150,7 @@ source ~/.bashrc
     - 書式：`source ファイル名`
     - 意味：`ファイル名` に書かれたコマンドを現在のシェルで実行する
 
-`~/.bashrc` ファイルは bash 起動毎に毎回読み込まれるファイルです．`~/.bashrc`ファイルの末尾に`source /opt/ros/melodic/setup.bash`が追記されることで，`/opt/ros/melodic/setup.bash` に書かれたスクリプトがbash起動毎に実行されることになります．bash 起動時とは `bash hogehoge` というようなコマンドを叩いた時です．
-
-
+`~/.bashrc` ファイルは bash 起動毎に毎回読み込まれるファイルです．`~/.bashrc`ファイルの末尾に`source /opt/ros/melodic/setup.bash`が追記されることで，`/opt/ros/melodic/setup.bash` に書かれたスクリプトが bash 起動毎に呼び出され，その呼び出し元のシェルで実行されることになります．
 
 ``` bash linenums="1" title="/opt/ros/melodic/setup.bash"
 #!/usr/bin/env bash
@@ -165,7 +163,6 @@ _CATKIN_SETUP_DIR=$(builtin cd "`dirname "${BASH_SOURCE[0]}"`" > /dev/null && pw
 . "$_CATKIN_SETUP_DIR/setup.sh"
 
 ```
-
 
 ??? note "builtin"
     - 書式：`builtin コマンド`
@@ -188,6 +185,8 @@ _CATKIN_SETUP_DIR=$(builtin cd "`dirname "${BASH_SOURCE[0]}"`" > /dev/null && pw
 ??? note ドット
     - 書式：`. ファイル名`
     - 意味：`ファイル名` に書かれたコマンドを現在のシェルで実行する
+
+このスクリプトにより，環境変数 `CATKIN_SHELL` は `bash` に，`_CATKIN_SETUP_DIR` は `/opt/ros/melodic` となり，結局 `/opt/ros/melodic/setup.sh` が現在のシェルで実行されます．
 
 ``` bash linenums="1" title="/opt/ros/melodic/setup.sh"
 #!/usr/bin/env sh
@@ -289,14 +288,18 @@ unset _CATKIN_ENVIRONMENT_HOOKS_COUNT
 
 ```
 
-
-
-
-
 ### ROSパッケージをなんやかんやするためのツールを導入
 ```
 sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
 ```
+
+| ツール名 | 用途 |
+| --- | --- |
+| python-rosdep | ROS パッケージの依存解決 |
+| python-rosinstall |  |
+| python-rosinstall-generator |  |
+| python-wstool |  |
+| build-essential |  |
 
 ### rosdep（ROSパッケージをなんやかんやするためのツールのひとつ）の初期化
 ```
@@ -312,6 +315,121 @@ catkin_make
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
+
+
+
+``` bash linenums="1" title="~/catkin_ws/devel/setup.bash"
+#!/usr/bin/env bash
+# generated from catkin/cmake/templates/setup.bash.in
+
+CATKIN_SHELL=bash
+
+# source setup.sh from same directory as this file
+_CATKIN_SETUP_DIR=$(builtin cd "`dirname "${BASH_SOURCE[0]}"`" > /dev/null && pwd)
+. "$_CATKIN_SETUP_DIR/setup.sh"
+
+```
+
+``` bash linenums="1" title="~/catkin_ws/devel/setup.sh"
+#!/usr/bin/env sh
+# generated from catkin/cmake/template/setup.sh.in
+
+# Sets various environment variables and sources additional environment hooks.
+# It tries it's best to undo changes from a previously sourced setup file before.
+# Supported command line options:
+# --extend: skips the undoing of changes from a previously sourced setup file
+# --local: only considers this workspace but not the chained ones
+# In plain sh shell which doesn't support arguments for sourced scripts you can
+# set the environment variable `CATKIN_SETUP_UTIL_ARGS=--extend/--local` instead.
+
+# since this file is sourced either use the provided _CATKIN_SETUP_DIR
+# or fall back to the destination set at configure time
+: ${_CATKIN_SETUP_DIR:=/home/alnico/catkin_ws/devel}
+_SETUP_UTIL="$_CATKIN_SETUP_DIR/_setup_util.py"
+unset _CATKIN_SETUP_DIR
+
+if [ ! -f "$_SETUP_UTIL" ]; then
+  echo "Missing Python script: $_SETUP_UTIL"
+  return 22
+fi
+
+# detect if running on Darwin platform
+_UNAME=`uname -s`
+_IS_DARWIN=0
+if [ "$_UNAME" = "Darwin" ]; then
+  _IS_DARWIN=1
+fi
+unset _UNAME
+
+# make sure to export all environment variables
+export CMAKE_PREFIX_PATH
+if [ $_IS_DARWIN -eq 0 ]; then
+  export LD_LIBRARY_PATH
+else
+  export DYLD_LIBRARY_PATH
+fi
+unset _IS_DARWIN
+export PATH
+export PKG_CONFIG_PATH
+export PYTHONPATH
+
+# remember type of shell if not already set
+if [ -z "$CATKIN_SHELL" ]; then
+  CATKIN_SHELL=sh
+fi
+
+# invoke Python script to generate necessary exports of environment variables
+# use TMPDIR if it exists, otherwise fall back to /tmp
+if [ -d "${TMPDIR:-}" ]; then
+  _TMPDIR="${TMPDIR}"
+else
+  _TMPDIR=/tmp
+fi
+_SETUP_TMP=`mktemp "${_TMPDIR}/setup.sh.XXXXXXXXXX"`
+unset _TMPDIR
+if [ $? -ne 0 -o ! -f "$_SETUP_TMP" ]; then
+  echo "Could not create temporary file: $_SETUP_TMP"
+  return 1
+fi
+CATKIN_SHELL=$CATKIN_SHELL "$_SETUP_UTIL" $@ ${CATKIN_SETUP_UTIL_ARGS:-} >> "$_SETUP_TMP"
+_RC=$?
+if [ $_RC -ne 0 ]; then
+  if [ $_RC -eq 2 ]; then
+    echo "Could not write the output of '$_SETUP_UTIL' to temporary file '$_SETUP_TMP': may be the disk if full?"
+  else
+    echo "Failed to run '\"$_SETUP_UTIL\" $@': return code $_RC"
+  fi
+  unset _RC
+  unset _SETUP_UTIL
+  rm -f "$_SETUP_TMP"
+  unset _SETUP_TMP
+  return 1
+fi
+unset _RC
+unset _SETUP_UTIL
+. "$_SETUP_TMP"
+rm -f "$_SETUP_TMP"
+unset _SETUP_TMP
+
+# source all environment hooks
+_i=0
+while [ $_i -lt $_CATKIN_ENVIRONMENT_HOOKS_COUNT ]; do
+  eval _envfile=\$_CATKIN_ENVIRONMENT_HOOKS_$_i
+  unset _CATKIN_ENVIRONMENT_HOOKS_$_i
+  eval _envfile_workspace=\$_CATKIN_ENVIRONMENT_HOOKS_${_i}_WORKSPACE
+  unset _CATKIN_ENVIRONMENT_HOOKS_${_i}_WORKSPACE
+  # set workspace for environment hook
+  CATKIN_ENV_HOOK_WORKSPACE=$_envfile_workspace
+  . "$_envfile"
+  unset CATKIN_ENV_HOOK_WORKSPACE
+  _i=$((_i + 1))
+done
+unset _i
+
+unset _CATKIN_ENVIRONMENT_HOOKS_COUNT
+
+```
+
 
 ```
 echo $ROS_PACKAGE_PATH
