@@ -3,9 +3,9 @@ description: Setup MkDocs
 runs:
   using: "composite"
   steps:
-    - uses: actions/setup-python@v1
+    - uses: actions/setup-python@v4
       with:
-        python-version: 3.10.2
+        python-version: '3.10'
     - run: pip3 install mkdocs
       shell: bash
     - run: pip3 install mkdocs-material
