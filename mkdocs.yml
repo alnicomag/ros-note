@@ -94,7 +94,6 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
-  - fontawesome_markdown
   - admonition
   - pymdownx.details
   - pymdownx.superfences:
