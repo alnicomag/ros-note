@@ -81,7 +81,6 @@ extra:
 
 extra_css:
   - stylesheets/extra.css
-  - https://use.fontawesome.com/releases/v5.15.0/css/all.css
 
 extra_javascript:
   - https://unpkg.com/mermaid/dist/mermaid.min.js
@@ -92,8 +91,8 @@ markdown_extensions:
   - mdx_math:
       enable_dollar_delimiter: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - admonition
   - pymdownx.details
   - pymdownx.superfences:
