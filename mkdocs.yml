@@ -81,10 +81,9 @@ extra:
 
 extra_css:
   - stylesheets/extra.css
-  - https://use.fontawesome.com/releases/v5.15.0/css/all.css
 
 extra_javascript:
-  - https://unpkg.com/mermaid/dist/mermaid.min.js
+  #- https://unpkg.com/mermaid/dist/mermaid.min.js
   - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 # Extensions
@@ -92,16 +91,15 @@ markdown_extensions:
   - mdx_math:
       enable_dollar_delimiter: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:pymdownx.emoji.to_svg
-  - fontawesome_markdown
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - admonition
   - pymdownx.details
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_div_format
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.keys
   - pymdownx.mark
   - footnotes
